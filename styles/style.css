@@ -2,7 +2,7 @@
 /* SCSS variables */
 /* SCSS inheritance */
 #preamble, #profile_picture, .table {
-  margin: auto; }
+  margin: 150px; }
 
 /* Increases space between social media icons and text in Navbar */
 #logo {
