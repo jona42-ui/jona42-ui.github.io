@@ -43,7 +43,7 @@ div p a {
 /* Changes profile picture size and centers */
 #profile_picture {
   border: 2.5px solid black;
-  width: 75%;
+  width: 50%;
   display: block; }
 
 /* publications.html -------------------------------------------------------- */
