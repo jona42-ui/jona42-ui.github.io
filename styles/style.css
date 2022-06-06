@@ -13,6 +13,7 @@
 /* Ensures content is not hidden behind navbar */
 body {
   padding-top: 100px;
+  background-image: url("images/full-moon-water.gif");
 }
 
 .footer {
