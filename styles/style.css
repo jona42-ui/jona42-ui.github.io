@@ -130,4 +130,72 @@ p.float-right {
   position: relative;
   left: 50px;
 }
-/*# sourceMappingURL=style.css.map */
+
+/* Skills section styles */
+.skills-section {
+  margin-top: 50px;
+}
+
+.skills-section h4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.skills-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-section ul li {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Work Experience section styles */
+.work-experience-section {
+  margin-top: 50px;
+}
+
+.work-experience-section h4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.work-experience-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.work-experience-section ul li {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Technologies section styles */
+.technologies-section {
+  margin-top: 50px;
+}
+
+.technologies-section h4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.technologies-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.technologies-section ul li {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
