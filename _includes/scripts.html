@@ -2,9 +2,17 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-<!-- Lazy Loading -->
 <script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true
+  });
+
+  // Lazy Loading
   document.addEventListener('DOMContentLoaded', function() {
     const imageObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
