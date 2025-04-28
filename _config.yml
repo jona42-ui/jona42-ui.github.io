@@ -22,6 +22,9 @@ social:
 
 # Build Settings
 markdown: kramdown
+highlighter: rouge
+
+# Sass
 sass:
   style: compressed
   sass_dir: assets/scss
@@ -31,6 +34,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-paginate
 
 # Exclude from processing
 exclude:
@@ -45,12 +49,11 @@ exclude:
   - .gitignore
   - README.md
   - LICENSE
-  - assets
-  - .nojekyll
 
 # Include directories
 include:
   - assets
+  - .nojekyll
   - _pages
   - _data
   - _layouts
@@ -95,7 +98,10 @@ compress_html:
 
 # Cache Settings
 keep_files:
-  - jekyll-paginate
+  - .git
+  - .svn
+  - assets
+  - .nojekyll
 
 # Progressive Web App
 pwa:
