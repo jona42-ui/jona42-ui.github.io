@@ -1,0 +1,37 @@
+featured:
+  - title: Drug Absorption Prediction Model
+    description: >
+      Developed a machine learning pipeline to predict drug permeability through human intestinal cells (Caco2 model).
+      The project enhances predictive modeling of drug absorption using binary classification and advanced feature engineering.
+    technologies:
+      - Python
+      - Scikit-Learn
+      - Machine Learning
+    image: assets/images/projects/globe.jpg
+    url: https://github.com/jona42-ui/Drug-Absorption-Model
+
+  - title: OpenMRS Clinical Image Annotation
+    description: >
+      Frontend module for OpenMRS that enables physical patient documentation through visual image annotation.
+      Part of Google Summer of Code 2023 contribution.
+    technologies:
+      - JavaScript
+      - React
+      - OpenMRS
+    image: assets/images/projects/9.jpg
+    url: https://github.com/jona42-ui/openmrs-frontend
+
+courses:
+  - title: CS50 - Introduction to Computer Science
+    institution: Harvard University
+    description: Introduction to computer science and programming covering C, Python, SQL, and web development
+    url: https://cs50.harvard.edu/
+    certificate: assets/images/projects/CS50x.pdf
+    image: assets/images/projects/CS50x.png
+
+  - title: Problem Solving and Computational Thinking
+    institution: Michigan University
+    description: Advanced problem-solving techniques and computational thinking principles
+    url: https://www.coursera.org/
+    certificate: assets/images/projects/Coursera YTCSDBTTYNQT.pdf
+    image: assets/images/projects/globe.jpg

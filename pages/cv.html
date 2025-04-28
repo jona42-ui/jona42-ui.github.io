@@ -1,0 +1,248 @@
+---
+layout: default
+title: CV & Experience
+description: Professional experience, education, and qualifications of Thembo Jonathan - Software Engineer with expertise in AI/ML and distributed systems.
+keywords: CV, resume, education, software engineering, Makerere University, Harvard CS50, OpenMRS, professional development
+---
+
+{% include breadcrumbs.html %}
+
+<div id="preamble" class="text-center mb-5">
+  Below is a brief overview of my education and programming experience. 
+  For more details, please see my <a href="https://www.linkedin.com/in/thembo-jonathan-7478701ab/">LinkedIn</a> profile.
+</div>
+
+<section class="mb-5">
+  <h2 class="section-title">Education</h2>
+  <div class="timeline">
+    {% for edu in site.data.education.university %}
+    <div class="timeline-item">
+      <h4><a href="{{ edu.url }}">{{ edu.name }}</a></h4>
+      <p class="timeline-date">{{ edu.period }}</p>
+      <p class="timeline-position">{{ edu.degree }}</p>
+      {% if edu.description %}
+      <p class="timeline-description">{{ edu.description }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+    
+    {% for edu in site.data.education.secondary %}
+    <div class="timeline-item">
+      <h4><a href="{{ edu.url }}">{{ edu.name }}</a></h4>
+      <p class="timeline-date">{{ edu.period }}</p>
+      <p class="timeline-position">{{ edu.level }}</p>
+      {% if edu.description %}
+      <p class="timeline-description">{{ edu.description }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="mb-5">
+  <h2 class="section-title">Professional Development</h2>
+  <div class="timeline">
+    {% for course in site.data.education.professional_development %}
+    <div class="timeline-item">
+      <h4><a href="{{ course.url }}">{{ course.name }}</a></h4>
+      <p class="timeline-date">{{ course.period }}</p>
+      <p class="timeline-position">{{ course.institution }}</p>
+      {% if course.description %}
+      <p class="timeline-description">{{ course.description }}</p>
+      {% endif %}
+      {% if course.certificate %}
+      <a href="{{ course.certificate | relative_url }}" class="btn btn-primary btn-sm mt-2" target="_blank">View Certificate</a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="mb-5">
+  <h2 class="section-title">Skills & Expertise</h2>
+  <div class="row">
+    {% for category in site.data.skills.core_skills %}
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-header">
+          <h3 class="h5 mb-0">{{ category.category }}</h3>
+        </div>
+        <div class="card-body">
+          <div class="skills-list">
+            {% for skill in category.items %}
+            <div class="skill-item mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4 class="h6 mb-0">{{ skill.name }}</h4>
+                <span class="badge badge-primary">{{ skill.proficiency }}</span>
+              </div>
+              <div class="progress mt-2" style="height: 5px;">
+                {% assign proficiency_level = 0 %}
+                {% case skill.proficiency %}
+                  {% when 'Expert' %}{% assign proficiency_level = 95 %}
+                  {% when 'Advanced' %}{% assign proficiency_level = 85 %}
+                  {% when 'Intermediate' %}{% assign proficiency_level = 70 %}
+                  {% else %}{% assign proficiency_level = 60 %}
+                {% endcase %}
+                <div class="progress-bar" role="progressbar" style="width: {{ proficiency_level }}%" aria-valuenow="{{ proficiency_level }}" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="h5 mb-0">Soft Skills</h3>
+        </div>
+        <div class="card-body">
+          <div class="d-flex flex-wrap gap-2">
+            {% for skill in site.data.skills.soft_skills %}
+            <span class="badge badge-secondary p-2 mr-2 mb-2">{{ skill }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mb-5" id="faq">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="accordion" id="faqAccordion">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h3 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            What are your primary areas of expertise?
+          </button>
+        </h3>
+      </div>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+        <div class="card-body">
+          I specialize in AI/ML applications, web development, and distributed systems. My core technical stack includes Python, JavaScript, and Java, with extensive experience in frameworks like React and technologies like TensorFlow.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h3 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Do you contribute to open source projects?
+          </button>
+        </h3>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+        <div class="card-body">
+          Yes, I actively contribute to open source projects. Most notably, I've contributed to OpenMRS, developing a frontend module for clinical image annotation. You can find my contributions on my GitHub profile.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h3 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What kind of projects are you interested in?
+          </button>
+        </h3>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+        <div class="card-body">
+          I'm particularly interested in projects that leverage technology for social impact, especially in healthcare and education. I enjoy working on AI/ML projects, building scalable web applications, and contributing to open source initiatives that make a difference in people's lives.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ site.url }}#person",
+  "name": "{{ site.author }}",
+  "description": "{{ site.description }}",
+  "url": "{{ site.url }}",
+  "image": "{{ '/assets/images/profile/jonaprof.jpg' | absolute_url }}",
+  "sameAs": [
+    "https://github.com/{{ site.social.github }}",
+    "https://www.linkedin.com/in/{{ site.social.linkedin }}"
+  ],
+  "alumniOf": [
+    {% for edu in site.data.education.university %}
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "{{ edu.name }}",
+      "url": "{{ edu.url }}",
+      "award": "{{ edu.degree }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "hasCredential": [
+    {% for course in site.data.education.professional_development %}
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "certificate",
+      "name": "{{ course.name }}",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "{{ course.institution }}",
+        "url": "{{ course.url }}"
+      },
+      "dateCreated": "{{ course.period }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Software Engineer",
+    "occupationalCategory": "15-1252.00",
+    "skills": [
+      {% for category in site.data.skills.core_skills %}
+        {% for skill in category.items %}
+        {
+          "@type": "DefinedTerm",
+          "termCode": "{{ category.category | slugify }}",
+          "name": "{{ skill.name }}",
+          "description": "{{ skill.proficiency }} level with {{ skill.years }} years of experience"
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What are your primary areas of expertise?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "I specialize in AI/ML applications, web development, and distributed systems. My core technical stack includes Python, JavaScript, and Java, with extensive experience in frameworks like React and technologies like TensorFlow."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Do you contribute to open source projects?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, I actively contribute to open source projects. Most notably, I've contributed to OpenMRS, developing a frontend module for clinical image annotation. You can find my contributions on my GitHub profile."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What kind of projects are you interested in?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "I'm particularly interested in projects that leverage technology for social impact, especially in healthcare and education. I enjoy working on AI/ML projects, building scalable web applications, and contributing to open source initiatives that make a difference in people's lives."
+    }
+  }]
+}
+</script>

@@ -1,0 +1,58 @@
+{% if page.url != "/" %}
+<nav aria-label="breadcrumb" class="breadcrumbs py-2">
+  <ol class="breadcrumb bg-light py-2 px-3 mb-4" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="{{ '/' | relative_url }}" itemprop="item">
+        <span itemprop="name">Home</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    
+    {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+    {% assign position = 2 %}
+    
+    {% for crumb in crumbs offset: 1 %}
+      {% if forloop.last %}
+        <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">{{ page.title }}</span>
+          <meta itemprop="position" content="{{ position }}" />
+        </li>
+      {% else %}
+        {% assign crumb_url = crumb | append: "/" %}
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ crumb_url | relative_url }}" itemprop="item">
+            <span itemprop="name">{{ crumb | replace: '-', ' ' | capitalize }}</span>
+          </a>
+          <meta itemprop="position" content="{{ position }}" />
+        </li>
+        {% assign position = position | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  </ol>
+</nav>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}"
+    }
+    {% assign position = 2 %}
+    {% for crumb in crumbs offset: 1 %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "{% if forloop.last %}{{ page.title }}{% else %}{{ crumb | replace: '-', ' ' | capitalize }}{% endif %}",
+      "item": "{{ site.url }}{% for c in crumbs limit: forloop.index %}{{ c }}/{% endfor %}"
+    }
+    {% assign position = position | plus: 1 %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

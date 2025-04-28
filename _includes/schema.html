@@ -1,0 +1,79 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ site.url }}#person",
+  "name": "{{ site.author }}",
+  "givenName": "Thembo",
+  "familyName": "Jonathan",
+  "url": "{{ site.url }}",
+  "image": "{{ '/assets/images/profile/jonaprof.jpg' | absolute_url }}",
+  "description": "{{ site.description }}",
+  "sameAs": [
+    "https://github.com/{{ site.social.github }}",
+    "https://www.linkedin.com/in/{{ site.social.linkedin }}"
+  ],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Makerere University",
+    "url": "https://www.mak.ac.ug/"
+  },
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Software Engineer",
+    "occupationalCategory": "15-1252.00",
+    "skills": [
+      {% for category in site.data.skills.core_skills %}
+        {% for skill in category.items %}
+        {
+          "@type": "DefinedTerm",
+          "termCode": "{{ skill.identifier }}",
+          "name": "{{ skill.name }}",
+          "inDefinedTermSet": "{{ category.identifier }}",
+          "description": "{{ skill.proficiency }} level with {{ skill.years }} years of experience",
+          "additionalType": [
+            {% for tax in skill.taxonomy %}
+            "{{ tax }}"{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  },
+  "knowsAbout": [
+    {% for category in site.data.skills.core_skills %}
+    {
+      "@type": "DefinedTerm",
+      "termCode": "{{ category.identifier }}",
+      "name": "{{ category.category }}",
+      "skills": [
+        {% for skill in category.items %}
+        "{{ skill.name }}"{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "hasCredential": [
+    {% for cert in site.data.skills.certifications %}
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "certification",
+      "name": "{{ cert.name }}",
+      "identifier": "{{ cert.identifier }}",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "{{ cert.issuer }}"
+      },
+      "url": "{{ cert.url }}",
+      "validFrom": "{{ cert.date }}",
+      "competencyRequired": [
+        {% for skill in cert.skills %}
+        "{{ skill }}"{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}</script>

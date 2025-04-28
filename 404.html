@@ -1,0 +1,51 @@
+---
+layout: default
+title: Page Not Found
+description: Sorry, the page you're looking for cannot be found. Return to Thembo Jonathan's portfolio homepage.
+permalink: /404.html
+---
+
+<div class="container text-center py-5">
+  <h1 class="display-1 text-primary mb-4">404</h1>
+  <h2 class="mb-4">Page Not Found</h2>
+  <p class="lead mb-5">Sorry, the page you're looking for doesn't exist or has been moved.</p>
+  <div class="mb-5">
+    <a href="{{ '/' | relative_url }}" class="btn btn-primary">Return Home</a>
+  </div>
+  <div class="suggestions">
+    <h3 class="h5 mb-4">You might be interested in:</h3>
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <a href="{{ '/pages/cv' | relative_url }}" class="text-decoration-none">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h4 class="h6 mb-0">View My CV</h4>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="{{ '/pages/projects' | relative_url }}" class="text-decoration-none">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h4 class="h6 mb-0">Explore Projects</h4>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "{{ site.url }}"
+  }]
+}
+</script>

@@ -1,5 +1,27 @@
-# Object file
-*.o
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.jekyll-now
 
-# Ada Library Information
-*.ali
+# Environment
+.env
+.env.*
+
+# Editor files
+*.swp
+.DS_Store
+.idea/
+.vscode/
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Build artifacts
+dist/
+build/
+_build/

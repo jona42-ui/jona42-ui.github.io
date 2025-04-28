@@ -1,0 +1,48 @@
+{
+  "name": "Thembo Jonathan - Software Engineer",
+  "short_name": "Thembo Jonathan",
+  "description": "Software engineer specializing in AI/ML, web development, and distributed systems",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/assets/images/dna_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/dna_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View CV",
+      "url": "/pages/cv",
+      "description": "View my professional experience and qualifications"
+    },
+    {
+      "name": "Projects",
+      "url": "/pages/projects",
+      "description": "Explore my portfolio of projects"
+    }
+  ],
+  "categories": ["portfolio", "professional", "technology"],
+  "screenshots": [
+    {
+      "src": "/assets/images/profile/jonaprof.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "Homepage of Thembo Jonathan's Portfolio"
+    }
+  ],
+  "prefer_related_applications": false,
+  "scope": "/"
+}

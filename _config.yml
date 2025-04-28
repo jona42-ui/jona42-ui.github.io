@@ -1,1 +1,98 @@
-theme: jekyll-theme-time-machine
+# Site Settings
+title: "Thembo Jonathan - Software Developer Portfolio"
+description: "Experienced software developer specializing in full-stack development, machine learning, and data science. View my projects, skills, and professional experience."
+baseurl: ""
+url: "https://jona42-ui.github.io"
+author: "Thembo Jonathan"
+email: "your-email@example.com"
+twitter_username: "your-twitter"
+github_username: "jona42-ui"
+linkedin_username: "your-linkedin"
+
+# SEO Settings
+lang: "en"
+locale: "en_US"
+keywords: "software developer, full stack developer, machine learning engineer, data scientist, web development, portfolio"
+social:
+  name: Thembo Jonathan
+  links:
+    - https://github.com/jona42-ui
+    - https://linkedin.com/in/your-linkedin
+    - https://twitter.com/your-twitter
+
+# Build Settings
+markdown: kramdown
+permalink: pretty
+sass:
+  style: compressed
+  sass_dir: assets/scss
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Compression and Optimization
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [development]
+  blanklines: false
+  profile: false
+  startings: [html, head, body]
+
+# Cache Settings
+keep_files:
+  - .git
+  - assets
+  - .nojekyll
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Default Values
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      image: "/assets/images/profile/jonaprof.jpg"
+  - scope:
+      path: "pages"
+    values:
+      layout: "article"
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
+
+# Progressive Web App
+pwa:
+  enabled: true
+  manifest: "/manifest.json"
+  theme_color: "#2563eb"
+  background_color: "#ffffff"
+  display: "standalone"
+  scope: "/"
+  start_url: "/"
+  icons:
+    - src: "/assets/images/dna_icon.png"
+      sizes: "192x192"
+      type: "image/png"
+
+# Analytics and Tracking
+google_analytics: "your-ga-id"
+google_site_verification: "your-verification-code"
+
+# Performance Optimization
+limit_posts: 10
+future: false
+unpublished: false
+source: "."
+destination: "./_site"
+encoding: "utf-8"
+strict_front_matter: true
