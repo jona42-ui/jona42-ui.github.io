@@ -1,39 +1,36 @@
 university:
   - name: Makerere University
     url: https://www.mak.ac.ug/
-    degree: BSc Software Engineering
-    period: 2020 - 2024
-    description: Focused on software development, AI/ML, distributed systems, and web technologies. Key coursework included algorithms, data structures, machine learning, and software architecture.
+    degree: B.S. in Software Engineering
+    period: 2020
+    location: Kampala, Uganda.
+    description: Focused on software development, AI/ML, distributed systems, and web technologies.
 
 secondary:
-  - name: Merryland High Schools
+  - name: Merryland High School
     url: https://merrylandhighschools.com/
-    level: Advanced Level Education (A-Level)
-    period: 2018 - 2019
-    description: Mathematics, Physics, and Computer Science
+    level: Advanced Education certification
+    period: 2017
+    location: Entebbe, Uganda.
 
-  - name: Merryland High Schools
+  - name: Merryland High School
     url: https://merrylandhighschools.com/
-    level: Ordinary Level Education (O-Level)
-    period: 2014 - 2017
+    level: Certification of Education
+    period: 2014
+    location: Entebbe, Uganda.
 
 professional_development:
-  - name: CS50 - Introduction to Computer Science
-    url: https://cs50.harvard.edu/x/
-    institution: Harvard University
-    period: 2021
-    description: Comprehensive computer science fundamentals covering C, Python, SQL, JavaScript, and web development
-    certificate: /assets/images/projects/CS50x.pdf
-
-  - name: Problem Solving and Computational Thinking
-    url: https://www.coursera.org/
-    institution: Michigan University
-    period: 2020
-    description: Advanced problem-solving techniques and computational thinking principles
-    certificate: /assets/images/projects/Coursera YTCSDBTTYNQT.pdf
-
-  - name: Full-Stack Web Development
-    url: https://www.pirple.com/
-    institution: Pirple.com
-    period: 2019
-    description: Modern web development practices and full-stack technologies
+  - name: Google Certifications
+    description: System administration and IT infrastructure services
+    
+  - name: OpenMRS Fundamentals Academy Certification
+    
+  - name: Google Summer of Code
+    
+  - name: CS50x
+    
+  - name: JavaScript Algorithms and Data Structures
+    
+  - name: Responsive Web Design
+    
+  - name: Problem solving and computational thinking

@@ -2,59 +2,69 @@ core_skills:
   - category: Programming Languages
     identifier: computer-programming
     items:
-      - name: Python
-        proficiency: Expert
-        years: 3
-        identifier: python-programming
-        taxonomy: ["Computer Science", "Software Development", "Programming Languages"]
-      - name: JavaScript
+      - name: Javascript
         proficiency: Expert
         years: 4
         identifier: javascript-programming
         taxonomy: ["Web Development", "Front-end Development", "Programming Languages"]
+      - name: Python
+        proficiency: Advanced
+        years: 3
+        identifier: python-programming
+        taxonomy: ["Data Science", "Machine Learning", "Backend Development"]
       - name: Java
         proficiency: Advanced
         years: 3
         identifier: java-programming
-        taxonomy: ["Software Development", "Object-Oriented Programming", "Programming Languages"]
+        taxonomy: ["Backend Development", "Enterprise Applications"]
 
   - category: Web Technologies
     identifier: web-development
     items:
       - name: React
-        proficiency: Advanced
-        years: 2
+        proficiency: Expert
+        years: 3
         identifier: react-framework
-        taxonomy: ["Front-end Development", "JavaScript Frameworks", "UI Development"]
-      - name: Node.js
-        proficiency: Advanced
+        taxonomy: ["Frontend Development", "UI/UX", "Single Page Applications"]
+      - name: Angular
+        proficiency: Expert
+        years: 3
+        identifier: angular-framework
+        taxonomy: ["Frontend Development", "Enterprise Applications"]
+      - name: Node.js & Express
+        proficiency: Expert
         years: 3
         identifier: nodejs-platform
-        taxonomy: ["Back-end Development", "JavaScript Runtime", "Server-side Programming"]
-      - name: HTML5/CSS3
+        taxonomy: ["Backend Development", "API Development", "Server-side JavaScript"]
+      - name: NestJS
+        proficiency: Advanced
+        years: 2
+        identifier: nestjs-framework
+        taxonomy: ["Backend Development", "TypeScript", "Enterprise Applications"]
+      - name: TypeScript
         proficiency: Expert
-        years: 4
-        identifier: web-markup
-        taxonomy: ["Web Development", "Front-end Development", "Web Standards"]
+        years: 3
+        identifier: typescript
+        taxonomy: ["Type Safety", "JavaScript Superset", "Enterprise Development"]
 
   - category: AI & Machine Learning
     identifier: artificial-intelligence
     items:
-      - name: TensorFlow
+      - name: Natural Language Processing
         proficiency: Advanced
         years: 2
-        identifier: tensorflow-framework
-        taxonomy: ["Machine Learning", "Deep Learning", "Neural Networks"]
-      - name: PyTorch
-        proficiency: Intermediate
+        identifier: nlp
+        taxonomy: ["ML", "Text Processing", "Language Models"]
+      - name: Model Validation
+        proficiency: Advanced
+        years: 2
+        identifier: model-validation
+        taxonomy: ["ML Ops", "Model Evaluation", "Data Science"]
+      - name: Transformer Models
+        proficiency: Advanced
         years: 1
-        identifier: pytorch-framework
-        taxonomy: ["Machine Learning", "Deep Learning", "Neural Networks"]
-      - name: Scikit-learn
-        proficiency: Advanced
-        years: 2
-        identifier: scikit-learn
-        taxonomy: ["Machine Learning", "Data Science", "Statistical Analysis"]
+        identifier: transformers
+        taxonomy: ["Deep Learning", "NLP", "AI"]
 
   - category: Tools & Platforms
     identifier: development-tools
@@ -63,48 +73,45 @@ core_skills:
         proficiency: Expert
         years: 4
         identifier: version-control
-        taxonomy: ["Software Development", "Version Control", "Collaboration Tools"]
-      - name: Docker
+        taxonomy: ["Version Control", "Collaboration", "Source Management"]
+      - name: SAP S/4HANA
         proficiency: Advanced
-        years: 2
-        identifier: containerization
-        taxonomy: ["DevOps", "Container Technology", "Deployment"]
-      - name: Azure Cloud
+        years: 1
+        identifier: sap-integration
+        taxonomy: ["Enterprise Software", "ERP Integration"]
+      - name: Google Cloud Platform
         proficiency: Advanced
         years: 2
         identifier: cloud-computing
-        taxonomy: ["Cloud Computing", "Infrastructure", "Cloud Services"]
+        taxonomy: ["Cloud Services", "Infrastructure", "Scalability"]
 
 soft_skills:
-  - name: Leadership
-    description: Leading and coordinating technical teams and projects
-    taxonomy: ["Management", "Team Leadership", "Project Management"]
+  - name: Technical Leadership
+    description: Leading technical teams and projects
+    taxonomy: ["Team Leadership", "Project Management", "Technical Direction"]
   - name: Problem Solving
-    description: Analytical thinking and creative solution development
-    taxonomy: ["Critical Thinking", "Analysis", "Technical Problem Solving"]
-  - name: Team Collaboration
-    description: Effective communication and teamwork in diverse environments
-    taxonomy: ["Communication", "Teamwork", "Collaboration"]
-  - name: Technical Writing
-    description: Creating clear and comprehensive technical documentation
-    taxonomy: ["Documentation", "Technical Communication", "Writing"]
-  - name: Project Management
-    description: Planning, organizing, and delivering software projects
-    taxonomy: ["Project Planning", "Agile Methodologies", "Project Delivery"]
-  - name: Mentoring
-    description: Teaching and guiding junior developers and team members
-    taxonomy: ["Teaching", "Knowledge Sharing", "Team Development"]
+    description: Complex problem analysis and solution design
+    taxonomy: ["Analytical Thinking", "Innovation", "Architecture"]
+  - name: Communication
+    description: Clear technical and non-technical communication
+    taxonomy: ["Documentation", "Presentation", "Collaboration"]
 
 certifications:
+  - name: Google System Administration
+    issuer: Google
+    date: 2024
+    identifier: google-it-cert
+    url: https://www.coursera.org/google-certificates
+    skills: ["System Administration", "IT Infrastructure", "Cloud Services"]
+  - name: OpenMRS Fundamentals
+    issuer: OpenMRS
+    date: 2023
+    identifier: openmrs-cert
+    url: https://www.openmrs.org
+    skills: ["Healthcare Software", "Open Source", "Medical Systems"]
   - name: CS50x
     issuer: Harvard University
-    date: 2021
-    identifier: cs50-certification
+    date: 2023
+    identifier: cs50x-cert
     url: https://cs50.harvard.edu/x/
-    skills: ["Computer Science", "Programming", "Web Development"]
-  - name: Problem Solving
-    issuer: Michigan University
-    date: 2020
-    identifier: computational-thinking
-    url: https://www.coursera.org/
-    skills: ["Problem Solving", "Computational Thinking", "Algorithms"]
+    skills: ["Computer Science", "Programming", "Software Development"]
