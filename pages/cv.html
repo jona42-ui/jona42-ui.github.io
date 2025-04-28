@@ -132,17 +132,9 @@ keywords: CV, resume, education, software engineering, Makerere University, Open
     </div>
   </section>
 
-  <section class="mb-5">
-    <h2 class="section-title">Professional Development & Certifications</h2>
-    <div class="timeline">
-      {% for cert in site.data.education.professional_development %}
-      <div class="timeline-item">
-        <h4>{{ cert.name }}</h4>
-        {% if cert.description %}
-        <p class="timeline-description">{{ cert.description }}</p>
-        {% endif %}
-      </div>
-      {% endfor %}
-    </div>
-  </section>
+  <div class="text-center mb-5">
+    <a href="/pages/education" class="btn btn-primary">
+      <i class="bi bi-award"></i> View Certifications & Professional Development
+    </a>
+  </div>
 </div>
