@@ -199,3 +199,27 @@ p.float-right {
   margin-bottom: 10px;
   border-radius: 5px;
 }
+
+.skill-progress-bar {
+  height: 5px;
+}
+
+.skill-progress-bar .progress-bar {
+  transition: width .6s ease;
+}
+
+.skill-progress-bar.expert .progress-bar {
+  width: 95%;
+}
+
+.skill-progress-bar.advanced .progress-bar {
+  width: 85%;
+}
+
+.skill-progress-bar.intermediate .progress-bar {
+  width: 70%;
+}
+
+.skill-progress-bar.beginner .progress-bar {
+  width: 60%;
+}

@@ -3,22 +3,21 @@ title: "Thembo Jonathan - Software Developer Portfolio"
 description: "Experienced software developer specializing in full-stack development, machine learning, and data science. View my projects, skills, and professional experience."
 baseurl: ""
 url: "https://jona42-ui.github.io"
-author: "Thembo Jonathan"
-email: "your-email@example.com"
-twitter_username: "your-twitter"
+author: "THEMBO JONATHAN"
+email: "jonathanthembo123@gmail.com"
+phone: "(256) 770688802"
 github_username: "jona42-ui"
-linkedin_username: "your-linkedin"
+linkedin_username: "thembo-jonathan"
 
 # SEO Settings
 lang: "en"
 locale: "en_US"
 keywords: "software developer, full stack developer, machine learning engineer, data scientist, web development, portfolio"
 social:
-  name: Thembo Jonathan
+  name: THEMBO JONATHAN
   links:
     - https://github.com/jona42-ui
-    - https://linkedin.com/in/your-linkedin
-    - https://twitter.com/your-twitter
+    - https://www.linkedin.com/in/thembo-jonathan/
 
 # Build Settings
 markdown: kramdown
