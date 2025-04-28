@@ -1,104 +1,21 @@
 # Site Settings
-title: "Thembo Jonathan - Software Engineer"
-subtitle: "Full Stack Developer | Machine Learning Engineer | Data Scientist"
-description: "Experienced software developer specializing in full-stack development, machine learning, and data science. View my projects, skills, and professional experience."
-baseurl: ""
+title: Jonathan Thembo
+description: Personal portfolio and blog
 url: "https://jona42-ui.github.io"
-author: "THEMBO JONATHAN"
-email: "jonathanthembo123@gmail.com"
-phone: "(256) 770688802"
-github_username: "jona42-ui"
-linkedin_username: "thembo-jonathan"
+formspree_id: "https://formspree.io/f/mgvkowvz" # Replace this with your actual Formspree form ID
 
-# SEO Settings
-lang: "en"
-locale: "en_US"
-keywords: "software developer, full stack developer, machine learning engineer, data scientist, web development, portfolio"
-social:
-  name: THEMBO JONATHAN
-  links:
-    - https://github.com/jona42-ui
-    - https://www.linkedin.com/in/thembo-jonathan/
-
-# Build Settings
+# Build settings
 markdown: kramdown
-permalink: pretty
-sass:
-  style: compressed
-  sass_dir: assets/scss
-
-# Blog Settings
-permalink: /blog/:title/
-paginate: 6
-paginate_path: "/pages/blog/page:num/"
-
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /blog/:year/:month/:day/:title/
-
-# Default Settings
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "article"
-      author: "Thembo Jonathan"
-  - scope:
-      path: "pages"
-      type: "pages"
-    values:
-      layout: "default"
-      
-# Plugin Settings
 plugins:
-  - jekyll-paginate
+  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
+  - jekyll-paginate
 
-# Compression and Optimization
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: all
-  ignore:
-    envs: [development]
-  blanklines: false
-  profile: false
-  startings: [html, head, body]
-
-# Cache Settings
-keep_files:
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
   - .git
-  - assets
-  - .nojekyll
-
-# Progressive Web App
-pwa:
-  enabled: true
-  manifest: "/manifest.json"
-  theme_color: "#2563eb"
-  background_color: "#ffffff"
-  display: "standalone"
-  scope: "/"
-  start_url: "/"
-  icons:
-    - src: "/assets/images/dna_icon.png"
-      sizes: "192x192"
-      type: "image/png"
-
-# Analytics and Tracking
-google_analytics: "your-ga-id"
-google_site_verification: "your-verification-code"
-
-# Performance Optimization
-limit_posts: 10
-future: false
-unpublished: false
-source: "."
-destination: "./_site"
-encoding: "utf-8"
-strict_front_matter: true
