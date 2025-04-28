@@ -1,0 +1,59 @@
+:root {
+  // Colors
+  --primary-color: #2563eb;
+  --primary-rgb: 37, 99, 235;
+  --secondary-color: #64748b;
+  --success-color: #10b981;
+  --warning-color: #fbbf24;
+  --warning-text: #92400e;
+  --danger-color: #ef4444;
+  --text-color: #1e293b;
+  --text-muted: #64748b;
+  --bg-color: #ffffff;
+  --border-color: #e2e8f0;
+  
+  // Typography
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-base: 16px;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.125rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-base: 1.6;
+  
+  // Spacing
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  
+  // Border Radius
+  --border-radius-sm: 0.25rem;
+  --border-radius: 0.5rem;
+  --border-radius-lg: 1rem;
+  
+  // Box Shadow
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  
+  // Transitions
+  --transition-base: all 0.3s ease;
+  --transition-transform: transform 0.3s ease;
+  --transition-shadow: box-shadow 0.3s ease;
+  
+  // Z-index
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal: 1040;
+  --z-popover: 1050;
+  --z-tooltip: 1060;
+}

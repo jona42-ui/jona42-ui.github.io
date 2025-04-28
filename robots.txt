@@ -1,0 +1,42 @@
+# robots.txt for jona42-ui.github.io
+# Last updated: 2025-04-28
+
+User-agent: *
+Allow: /
+Allow: /pages/
+Allow: /assets/images/
+Allow: /assets/css/
+Allow: /assets/js/
+
+# Prevent crawling of certain files
+Disallow: /assets/scss/
+Disallow: /.git/
+Disallow: /_layouts/
+Disallow: /_includes/
+Disallow: /_data/
+Disallow: /music/
+Disallow: /LICENSE
+Disallow: /README.md
+
+# Prevent access to project PDFs to avoid duplicate content
+Disallow: /assets/images/projects/*.pdf
+
+# Allow crawling of important document previews
+Allow: /assets/images/projects/CS50x.png
+Allow: /assets/images/projects/globe.jpg
+Allow: /assets/images/profile/jonaprof.jpg
+
+# Custom crawl-delay for better server performance
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://jona42-ui.github.io/sitemap.xml
+
+# Additional documentation for search engines
+# Main sections:
+# / - Homepage with introduction and overview
+# /pages/cv - Professional experience and qualifications
+# /pages/projects - Portfolio of development projects
+# Important images in /assets/images/
+# Author: Thembo Jonathan
+# Contact: Available through website contact form

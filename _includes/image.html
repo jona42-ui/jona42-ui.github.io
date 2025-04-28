@@ -1,0 +1,38 @@
+{% assign image_path = include.path | default: include.src %}
+{% assign alt_text = include.alt | default: "Image" %}
+{% assign lazy = include.lazy | default: true %}
+{% assign caption = include.caption %}
+{% assign classes = include.class %}
+{% assign width = include.width %}
+{% assign height = include.height %}
+
+<figure class="image-wrapper {{ classes }}">
+  <img
+    {% if lazy %}loading="lazy"{% endif %}
+    src="{{ image_path | relative_url }}"
+    alt="{{ alt_text }}"
+    {% if width %}width="{{ width }}"{% endif %}
+    {% if height %}height="{{ height }}"{% endif %}
+    class="img-fluid"
+    itemprop="image"
+    {% if caption %}title="{{ caption }}"{% endif %}
+  >
+  {% if caption %}
+    <figcaption class="text-center text-muted mt-2">{{ caption }}</figcaption>
+  {% endif %}
+</figure>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "contentUrl": "{{ image_path | absolute_url }}",
+  "description": "{{ alt_text }}",
+  {% if caption %}"caption": "{{ caption }}",{% endif %}
+  {% if width %}"width": "{{ width }}",{% endif %}
+  {% if height %}"height": "{{ height }}",{% endif %}
+  "author": {
+    "@type": "Person",
+    "@id": "{{ site.url }}#person"
+  }
+}</script>

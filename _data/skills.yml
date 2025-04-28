@@ -1,0 +1,110 @@
+core_skills:
+  - category: Programming Languages
+    identifier: computer-programming
+    items:
+      - name: Python
+        proficiency: Expert
+        years: 3
+        identifier: python-programming
+        taxonomy: ["Computer Science", "Software Development", "Programming Languages"]
+      - name: JavaScript
+        proficiency: Expert
+        years: 4
+        identifier: javascript-programming
+        taxonomy: ["Web Development", "Front-end Development", "Programming Languages"]
+      - name: Java
+        proficiency: Advanced
+        years: 3
+        identifier: java-programming
+        taxonomy: ["Software Development", "Object-Oriented Programming", "Programming Languages"]
+
+  - category: Web Technologies
+    identifier: web-development
+    items:
+      - name: React
+        proficiency: Advanced
+        years: 2
+        identifier: react-framework
+        taxonomy: ["Front-end Development", "JavaScript Frameworks", "UI Development"]
+      - name: Node.js
+        proficiency: Advanced
+        years: 3
+        identifier: nodejs-platform
+        taxonomy: ["Back-end Development", "JavaScript Runtime", "Server-side Programming"]
+      - name: HTML5/CSS3
+        proficiency: Expert
+        years: 4
+        identifier: web-markup
+        taxonomy: ["Web Development", "Front-end Development", "Web Standards"]
+
+  - category: AI & Machine Learning
+    identifier: artificial-intelligence
+    items:
+      - name: TensorFlow
+        proficiency: Advanced
+        years: 2
+        identifier: tensorflow-framework
+        taxonomy: ["Machine Learning", "Deep Learning", "Neural Networks"]
+      - name: PyTorch
+        proficiency: Intermediate
+        years: 1
+        identifier: pytorch-framework
+        taxonomy: ["Machine Learning", "Deep Learning", "Neural Networks"]
+      - name: Scikit-learn
+        proficiency: Advanced
+        years: 2
+        identifier: scikit-learn
+        taxonomy: ["Machine Learning", "Data Science", "Statistical Analysis"]
+
+  - category: Tools & Platforms
+    identifier: development-tools
+    items:
+      - name: Git
+        proficiency: Expert
+        years: 4
+        identifier: version-control
+        taxonomy: ["Software Development", "Version Control", "Collaboration Tools"]
+      - name: Docker
+        proficiency: Advanced
+        years: 2
+        identifier: containerization
+        taxonomy: ["DevOps", "Container Technology", "Deployment"]
+      - name: Azure Cloud
+        proficiency: Advanced
+        years: 2
+        identifier: cloud-computing
+        taxonomy: ["Cloud Computing", "Infrastructure", "Cloud Services"]
+
+soft_skills:
+  - name: Leadership
+    description: Leading and coordinating technical teams and projects
+    taxonomy: ["Management", "Team Leadership", "Project Management"]
+  - name: Problem Solving
+    description: Analytical thinking and creative solution development
+    taxonomy: ["Critical Thinking", "Analysis", "Technical Problem Solving"]
+  - name: Team Collaboration
+    description: Effective communication and teamwork in diverse environments
+    taxonomy: ["Communication", "Teamwork", "Collaboration"]
+  - name: Technical Writing
+    description: Creating clear and comprehensive technical documentation
+    taxonomy: ["Documentation", "Technical Communication", "Writing"]
+  - name: Project Management
+    description: Planning, organizing, and delivering software projects
+    taxonomy: ["Project Planning", "Agile Methodologies", "Project Delivery"]
+  - name: Mentoring
+    description: Teaching and guiding junior developers and team members
+    taxonomy: ["Teaching", "Knowledge Sharing", "Team Development"]
+
+certifications:
+  - name: CS50x
+    issuer: Harvard University
+    date: 2021
+    identifier: cs50-certification
+    url: https://cs50.harvard.edu/x/
+    skills: ["Computer Science", "Programming", "Web Development"]
+  - name: Problem Solving
+    issuer: Michigan University
+    date: 2020
+    identifier: computational-thinking
+    url: https://www.coursera.org/
+    skills: ["Problem Solving", "Computational Thinking", "Algorithms"]

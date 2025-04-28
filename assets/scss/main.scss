@@ -1,0 +1,375 @@
+// Import variables
+@import 'variables';
+
+// Reset & Base styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding-top: 60px;
+}
+
+// Components
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+  .navbar-brand {
+    font-weight: 600;
+  }
+}
+
+// Timeline Component
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--primary-color);
+    opacity: 0.2;
+    
+    @media (min-width: 768px) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+  &-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    @media (min-width: 768px) {
+      width: calc(50% - 2rem);
+      margin-left: auto;
+      
+      &:nth-child(even) {
+        margin-left: 0;
+        margin-right: auto;
+      }
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      background: var(--primary-color);
+      border-radius: 50%;
+      left: -0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      
+      @media (min-width: 768px) {
+        left: auto;
+        right: -2.5rem;
+        
+        .timeline-item:nth-child(even) & {
+          right: auto;
+          left: -2.5rem;
+        }
+      }
+    }
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  &-date {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  &-title {
+    margin: 0 0 0.5rem;
+    color: var(--text-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+  
+  &-position {
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  
+  &-description {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+}
+
+// Skill Cards
+.skill-card {
+  height: 100%;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+  
+  .card-header {
+    background-color: rgba(var(--primary-rgb), 0.05);
+    border-bottom: 2px solid var(--primary-color);
+  }
+  
+  .progress {
+    height: 0.5rem;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    
+    &-bar {
+      background-color: var(--primary-color);
+      transition: width 1s ease;
+    }
+  }
+}
+
+// Badge Styles
+.badge {
+  padding: 0.5em 0.75em;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  
+  &-primary {
+    background-color: var(--primary-color);
+  }
+  
+  &-secondary {
+    background-color: var(--secondary-color);
+  }
+}
+
+// FAQ Accordion
+.faq-accordion {
+  .card {
+    border: none;
+    margin-bottom: 1rem;
+    
+    &-header {
+      background-color: transparent;
+      padding: 0;
+      
+      .btn-link {
+        width: 100%;
+        text-align: left;
+        color: var(--text-color);
+        font-weight: 600;
+        text-decoration: none;
+        padding: 1rem;
+        position: relative;
+        
+        &:hover {
+          color: var(--primary-color);
+        }
+        
+        &::after {
+          content: '+';
+          position: absolute;
+          right: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: transform 0.3s ease;
+        }
+        
+        &[aria-expanded="true"]::after {
+          transform: translateY(-50%) rotate(45deg);
+        }
+      }
+    }
+    
+    &-body {
+      padding: 1rem;
+      color: var(--text-muted);
+    }
+  }
+}
+
+// Article Layout
+.article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  
+  &-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  &-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  &-meta {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  
+  &-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    
+    h2, h3, h4 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 2rem 0;
+    }
+    
+    pre {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+    }
+  }
+  
+  &-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+  }
+}
+
+// Image optimizations
+img.lazy {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+.card-img-top {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background-color: #f8fafc;
+}
+
+// Image placeholder animation
+@keyframes imagePlaceholder {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.image-placeholder {
+  background: linear-gradient(90deg, #f0f0f0 25%, #f8f8f8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: imagePlaceholder 1.5s infinite;
+}
+
+// Offline Mode Styles
+body.offline {
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: $offline-indicator-color;
+    z-index: 9999;
+  }
+}
+
+#status-indicator {
+  background-color: $warning-bg;
+  color: $warning-text;
+  text-align: center;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// PWA Install Button
+.install-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1000;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Animation Classes
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Lazy Loading Image Placeholders
+img[data-src] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+img[src] {
+  opacity: 1;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://jona42-ui.github.io/</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://jona42-ui.github.io/assets/images/profile/jonaprof.jpg</image:loc>
+      <image:title>Thembo Jonathan - Profile Photo</image:title>
+    </image:image>
+  </url>
+
+  <!-- CV/Resume Page -->
+  <url>
+    <loc>https://jona42-ui.github.io/pages/cv</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Projects Page -->
+  <url>
+    <loc>https://jona42-ui.github.io/pages/projects</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://jona42-ui.github.io/assets/images/projects/globe.jpg</image:loc>
+      <image:title>Project - Global Impact</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://jona42-ui.github.io/assets/images/projects/9.jpg</image:loc>
+      <image:title>Featured Project</image:title>
+    </image:image>
+  </url>
+
+  <!-- Assets -->
+  <url>
+    <loc>https://jona42-ui.github.io/assets/images/profile/jonaprof.jpg</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Certificate PDFs -->
+  <url>
+    <loc>https://jona42-ui.github.io/assets/images/projects/CS50x.pdf</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jona42-ui.github.io/assets/images/projects/Coursera YTCSDBTTYNQT.pdf</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

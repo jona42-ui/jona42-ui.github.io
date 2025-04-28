@@ -1,0 +1,121 @@
+---
+layout: default
+title: Projects & Portfolio
+description: Explore Thembo Jonathan's software engineering projects, including AI/ML applications, web development work, and contributions to open source projects like OpenMRS.
+keywords: portfolio, projects, software engineering, AI/ML, OpenMRS, drug absorption model, Harvard CS50, programming courses
+---
+
+{% include breadcrumbs.html %}
+
+<div id="preamble" class="text-center mb-5">
+  Below is a showcase of my projects and completed courses. For more projects, visit my 
+  <a href="https://github.com/jona42-ui">GitHub</a> profile.
+</div>
+
+<section class="mb-5">
+  <h2 class="section-title">Featured Projects</h2>
+  <div class="row">
+    {% for project in site.data.projects.featured %}
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        {% include image.html 
+          path=project.image
+          alt=project.title
+          caption=project.description
+          class="card-img-top"
+          width="600"
+          height="337"
+        %}
+        <div class="card-body">
+          <h3 class="h5 card-title">
+            <a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.title }}</a>
+          </h3>
+          <p class="card-text">{{ project.description }}</p>
+          <div class="technologies">
+            {% for tech in project.technologies %}
+            <span class="badge badge-primary">{{ tech }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="mb-5">
+  <h2 class="section-title">Courses & Certifications</h2>
+  <div class="row">
+    {% for course in site.data.projects.courses %}
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="card-header">
+          <h3 class="h5 mb-0">{{ course.institution }}</h3>
+        </div>
+        <div class="card-body">
+          <h4 class="h6 card-title">
+            <a href="{{ course.url }}" target="_blank" rel="noopener">{{ course.title }}</a>
+          </h4>
+          <p class="card-text">{{ course.description }}</p>
+          {% if course.certificate %}
+          <a href="{{ course.certificate | relative_url }}" class="btn btn-primary" target="_blank" rel="noopener">
+            View Certificate
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "{{ site.url }}#person",
+    "name": "{{ site.author }}",
+    "url": "{{ site.url }}",
+    "image": "{{ '/assets/images/profile/jonaprof.jpg' | absolute_url }}",
+    "description": "{{ site.description }}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ page.url | absolute_url }}"
+    },
+    "knowsAbout": [
+      {% for project in site.data.projects.featured %}
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "{{ project.title }}",
+        "description": "{{ project.description }}",
+        "url": "{{ project.url }}",
+        "programmingLanguage": [
+          {% for tech in project.technologies %}
+          "{{ tech }}"{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ],
+        "image": "{{ project.image | absolute_url }}"
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],
+    "hasCredential": [
+      {% for course in site.data.projects.courses %}
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "certificate",
+        "name": "{{ course.title }}",
+        "description": "{{ course.description }}",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "{{ course.institution }}",
+          "url": "{{ course.url }}"
+        },
+        "image": "{{ course.image | absolute_url }}"
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+}
+</script>
