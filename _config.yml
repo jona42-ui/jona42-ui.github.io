@@ -8,12 +8,15 @@ timezone: UTC
 
 # Build settings
 markdown: kramdown
-remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-remote-theme
+
+# Performance optimization
+sass:
+  style: compressed
+  sourcemap: never
 
 # Author details
 author: Thembo Jonathan
@@ -50,6 +53,25 @@ pwa:
   enabled: true
   sw_filename: sw.js
   icon_path: /assets/images/dna_icon.png
+
+# Cache settings for performance
+cache:
+  type: memory
+  enabled: true
+
+# Compression settings
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  blanklines: false
+  profile: false
+
+# Image optimization
+img_optim:
+  image_formats: ["jpeg", "png", "gif"]
+  pngout: false
+  svgo: true
 
 # Exclude files from processing
 exclude:
