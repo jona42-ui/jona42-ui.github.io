@@ -9,58 +9,84 @@ keywords: CV, resume, education, software engineering, Makerere University, Camp
     <div class="row">
         <div class="col-12">
             <div id="preamble" class="mb-4">
-                Below is a brief overview of my education and programming experience. 
-                For more details, please see my <a href="https://www.linkedin.com/in/thembo-jonathan-7478701ab/">LinkedIn</a> profile.
+                <h2 class="mb-3">Curriculum Vitae</h2>
+                <p>Below is a brief overview of my education and programming experience. 
+                For more details, please see my <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">LinkedIn</a> profile.</p>
+            </div>
+
+            <div class="contact-info mb-4">
+                <h4>Contact Information</h4>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-phone mr-2"></i> {{ site.phone }}</li>
+                    <li><i class="fas fa-envelope mr-2"></i> {{ site.email }}</li>
+                    <li><i class="fab fa-github mr-2"></i> <a href="https://github.com/{{ site.github_username }}">github.com/{{ site.github_username }}</a></li>
+                    <li><i class="fab fa-linkedin mr-2"></i> <a href="https://linkedin.com/in/{{ site.linkedin_username }}">linkedin.com/in/{{ site.linkedin_username }}</a></li>
+                </ul>
             </div>
 
             <div class="education-section mb-5">
                 <h4>Education</h4>
                 <div class="timeline">
+                    {% for edu in site.data.education.university %}
                     <div class="timeline-item">
-                        <h5><a href="https://www.mak.ac.ug/">Makerere University</a></h5>
-                        <p class="timeline-date">2020 - present</p>
-                        <p class="timeline-description">BSc Software Engineering</p>
+                        <h5><a href="{{ edu.url }}">{{ edu.name }}</a></h5>
+                        <p class="timeline-date">{{ edu.period }}</p>
+                        <p class="timeline-description">{{ edu.degree }}</p>
+                        <p class="timeline-location">{{ edu.location }}</p>
+                        {% if edu.description %}
+                        <p class="timeline-details">{{ edu.description }}</p>
+                        {% endif %}
                     </div>
+                    {% endfor %}
                     
+                    {% for edu in site.data.education.secondary %}
                     <div class="timeline-item">
-                        <h5><a href="https://merrylandhighschools.com/">Merryland High Schools</a></h5>
-                        <p class="timeline-date">2018 - 2019</p>
-                        <p class="timeline-description">High School Education</p>
+                        <h5><a href="{{ edu.url }}">{{ edu.name }}</a></h5>
+                        <p class="timeline-date">{{ edu.period }}</p>
+                        <p class="timeline-description">{{ edu.level }}</p>
+                        <p class="timeline-location">{{ edu.location }}</p>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <h5><a href="https://merrylandhighschools.com/">Merryland High Schools</a></h5>
-                        <p class="timeline-date">2014 - 2017</p>
-                        <p class="timeline-description">Secondary Education</p>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
 
             <div class="experience-section mb-5">
                 <h4>Work Experience</h4>
                 <div class="timeline">
+                    {% for exp in site.data.experience %}
                     <div class="timeline-item">
-                        <h5><a href="https://www.campusgeeksinfo.com/">CampusGeeksinfo</a></h5>
-                        <p class="timeline-date">2021 - present</p>
-                        <p class="timeline-description">Founder and Software Engineer</p>
+                        <h5><a href="{{ exp.url }}">{{ exp.name }}</a></h5>
+                        <p class="timeline-date">{{ exp.period }}</p>
+                        <p class="timeline-description">{{ exp.position }}</p>
                         <ul class="experience-details">
-                            <li>Founded and developed a platform for campus-related information and resources</li>
-                            <li>Lead development of web applications using modern technologies</li>
-                            <li>Manage technical infrastructure and team coordination</li>
+                            {% for detail in exp.details %}
+                            <li>{{ detail }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <h5>Software Development Intern</h5>
-                        <p class="timeline-date">2020 - 2021</p>
-                        <p class="timeline-description">Intern Software Developer</p>
-                        <ul class="experience-details">
-                            <li>Participated in full-stack development projects</li>
-                            <li>Gained hands-on experience with industry best practices</li>
-                            <li>Collaborated with senior developers on various projects</li>
-                        </ul>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="skills-section mb-5">
+                <h4>Skills & Technologies</h4>
+                {% for category in site.data.skills.core_skills %}
+                <div class="skill-category mb-4">
+                    <h5>{{ category.category }}</h5>
+                    <div class="row">
+                        {% for skill in category.items %}
+                        <div class="col-md-4 mb-2">
+                            <div class="skill-item">
+                                <span class="skill-name">{{ skill.name }}</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{ skill.proficiency }}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
