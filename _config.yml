@@ -29,40 +29,15 @@ sass:
 # Blog Settings
 permalink: /blog/:year/:month/:day/:title/
 paginate: 6
-paginate_path: "/blog/page:num/"
+paginate_path: "/pages/blog/page:num/"
+gems:
+  - jekyll-paginate
 
 # Collections
 collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
   posts:
     output: true
     permalink: /blog/:year/:month/:day/:title/
-
-# Default Values
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-      image: "/assets/images/profile/jonaprof.jpg"
-  - scope:
-      path: "_posts"
-      type: "posts"
-    values:
-      layout: "article"
-      comments: true
-      share: true
-      related: true
-  - scope:
-      path: "pages"
-    values:
-      layout: "article"
-  - scope:
-      path: "assets/images"
-    values:
-      image: true
 
 # Plugin Settings
 plugins:

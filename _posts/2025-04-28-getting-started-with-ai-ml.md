@@ -5,6 +5,7 @@ description: "A comprehensive guide for software developers looking to begin the
 date: 2025-04-28
 author: Thembo Jonathan
 image: /assets/images/projects/globe.jpg
+alt: "AI and Machine Learning concept illustration"
 tags: [AI, Machine Learning, Python, TensorFlow]
 ---
 
@@ -56,4 +57,4 @@ I'll share some practical examples from my experience working on:
 
 ## Next Steps
 
-In future posts, we'll dive deeper into specific topics and work through hands-on projects. 
+In future posts, we'll dive deeper into specific topics and work through hands-on projects.
