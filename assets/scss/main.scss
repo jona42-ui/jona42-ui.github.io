@@ -373,3 +373,141 @@ img[data-src] {
 img[src] {
   opacity: 1;
 }
+
+// Mobile Navigation Styles
+.navbar-toggler {
+  border: none;
+  padding: 0;
+  
+  .hamburger-icon {
+    width: 30px;
+    height: 24px;
+    position: relative;
+    
+    span {
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: #fff;
+      transition: .25s ease-in-out;
+      
+      &:nth-child(1) { top: 0; }
+      &:nth-child(2) { top: 10px; }
+      &:nth-child(3) { top: 20px; }
+    }
+  }
+}
+
+.navbar-collapse.show {
+  .nav-item {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// Project Cards
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .project-image {
+    transition: transform 0.3s ease;
+  }
+  
+  .project-details {
+    transition: opacity 0.3s ease;
+  }
+}
+
+// Lazy Loading Images
+.lazy-picture {
+  background: #f0f0f0;
+  overflow: hidden;
+  position: relative;
+  
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; // 16:9 aspect ratio
+  }
+  
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    &.loaded {
+      opacity: 1;
+    }
+  }
+}
+
+// Contact Form
+.contact-section {
+  background: #f8f9fa;
+  
+  .contact-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      font-weight: 500;
+      color: #495057;
+    }
+    
+    .form-control {
+      border: 2px solid #e9ecef;
+      border-radius: 4px;
+      padding: 0.8rem;
+      transition: border-color 0.3s ease;
+      
+      &:focus {
+        border-color: #2563eb;
+        box-shadow: none;
+      }
+    }
+    
+    button {
+      padding: 0.8rem 2rem;
+      font-weight: 500;
+    }
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: 768px) {
+  .navbar-nav {
+    padding: 1rem 0;
+    
+    .nav-item {
+      transform: translateX(-20px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      transition-delay: calc(0.1s * var(--item-index));
+    }
+  }
+  
+  .project-card {
+    margin-bottom: 2rem;
+  }
+  
+  .contact-form {
+    padding: 1.5rem;
+  }
+}

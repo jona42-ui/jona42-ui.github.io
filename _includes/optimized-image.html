@@ -1,0 +1,28 @@
+{% comment %}
+Usage: 
+{% include optimized-image.html 
+  path="path/to/image.jpg"
+  alt="Alt text"
+  class="optional-css-class"
+  width="original-width"
+  height="original-height"
+%}
+{% endcomment %}
+
+<picture class="lazy-picture">
+  <source
+    data-srcset="{{ include.path | replace: '.jpg', '.webp' | relative_url }}"
+    type="image/webp">
+  <source
+    data-srcset="{{ include.path | relative_url }}"
+    type="image/jpeg">
+  <img
+    data-src="{{ include.path | relative_url }}"
+    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ include.width }} {{ include.height }}'%3E%3C/svg%3E"
+    alt="{{ include.alt }}"
+    class="lazy {{ include.class }}"
+    width="{{ include.width }}"
+    height="{{ include.height }}"
+    loading="lazy"
+    decoding="async">
+</picture>

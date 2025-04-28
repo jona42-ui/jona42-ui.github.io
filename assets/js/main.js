@@ -61,32 +61,34 @@ installButton.addEventListener('click', async () => {
 
 // Performance Optimization
 document.addEventListener('DOMContentLoaded', () => {
-  // Lazy load images
-  const images = document.querySelectorAll('img[data-src]');
+  // Lazy loading images
+  const lazyImages = document.querySelectorAll('img.lazy');
   const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const img = entry.target;
+        const sources = img.parentElement.querySelectorAll('source');
+        
+        // Load image
         img.src = img.dataset.src;
-        img.removeAttribute('data-src');
+        img.classList.add('loaded');
+        
+        // Load sources if any (for picture element)
+        sources.forEach(source => {
+          if (source.dataset.srcset) {
+            source.srcset = source.dataset.srcset;
+          }
+        });
+        
         observer.unobserve(img);
       }
     });
+  }, {
+    rootMargin: '50px 0px',
+    threshold: 0.01
   });
 
-  images.forEach(img => imageObserver.observe(img));
-
-  // Add animation classes to elements
-  const animatedElements = document.querySelectorAll('[data-animate]');
-  const animationObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
-    });
-  });
-
-  animatedElements.forEach(el => animationObserver.observe(el));
+  lazyImages.forEach(img => imageObserver.observe(img));
 });
 
 // Handle push notification permission
@@ -124,3 +126,51 @@ if (typeof module !== 'undefined' && module.exports) {
     requestNotificationPermission
   };
 }
+
+// Contact Form Handling
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formStatus = document.getElementById('formStatus');
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      
+      try {
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+        
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        const json = await response.json();
+        
+        if (response.ok) {
+          formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+          formStatus.className = 'alert alert-success';
+          contactForm.reset();
+        } else {
+          throw new Error(json.error || 'Form submission failed');
+        }
+      } catch (error) {
+        formStatus.textContent = 'There was an error sending your message. Please try again.';
+        formStatus.className = 'alert alert-danger';
+        console.error('Form submission error:', error);
+      } finally {
+        formStatus.style.display = 'block';
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+        
+        // Hide status message after 5 seconds
+        setTimeout(() => {
+          formStatus.style.display = 'none';
+        }, 5000);
+      }
+    });
+  }
+});

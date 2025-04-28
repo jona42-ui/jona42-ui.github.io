@@ -1,41 +1,75 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize project cards with staggered animation
-  const cards = document.querySelectorAll('.project-card');
-  cards.forEach((card, index) => {
-    card.style.animationDelay = `${index * 0.1}s`;
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
   });
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
+  // Project filtering
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      
+      // Update active button state
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      // Filter projects with animation
+      projectCards.forEach(card => {
+        const tags = card.dataset.tags.split(',');
+        if (filter === 'all' || tags.includes(filter)) {
+          card.style.display = 'block';
+          card.setAttribute('data-aos', 'fade-up');
+        } else {
+          card.style.display = 'none';
+          card.removeAttribute('data-aos');
+        }
+      });
+      
+      AOS.refresh();
+    });
+  });
+
+  // Project card hover effects
+  projectCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      const image = card.querySelector('.project-image');
+      const details = card.querySelector('.project-details');
+      
+      image.style.transform = 'scale(1.05)';
+      details.style.opacity = '1';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      const image = card.querySelector('.project-image');
+      const details = card.querySelector('.project-details');
+      
+      image.style.transform = 'scale(1)';
+      details.style.opacity = '0.8';
+    });
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById('project-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      
+      projectCards.forEach(card => {
+        const title = card.querySelector('.project-title').textContent.toLowerCase();
+        const description = card.querySelector('.project-description').textContent.toLowerCase();
+        const tags = card.dataset.tags.toLowerCase();
+        
+        if (title.includes(searchTerm) || description.includes(searchTerm) || tags.includes(searchTerm)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
       });
     });
-  });
-
-  // Initialize tech badge hover effects
-  const badges = document.querySelectorAll('.technologies .badge');
-  badges.forEach(badge => {
-    badge.addEventListener('mouseover', function() {
-      this.style.transform = 'translateY(-2px) rotate(3deg)';
-    });
-    badge.addEventListener('mouseout', function() {
-      this.style.transform = 'translateY(0) rotate(0deg)';
-    });
-  });
-
-  // Project image parallax effect
-  const projectImages = document.querySelectorAll('.project-image');
-  window.addEventListener('scroll', () => {
-    projectImages.forEach(img => {
-      const rect = img.getBoundingClientRect();
-      const isVisible = (rect.top <= window.innerHeight && rect.bottom >= 0);
-      if (isVisible) {
-        const scrolled = window.pageYOffset;
-        img.style.transform = `translateY(${scrolled * 0.05}px)`;
-      }
-    });
-  });
+  }
 });
