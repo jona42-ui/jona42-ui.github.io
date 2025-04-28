@@ -56,4 +56,4 @@ I'll share some practical examples from my experience working on:
 
 ## Next Steps
 
-In future posts, we'll dive deeper into specific topics and work through hands-on projects. Subscribe to stay updated!
+In future posts, we'll dive deeper into specific topics and work through hands-on projects. 
