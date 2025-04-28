@@ -59,27 +59,63 @@ image: /assets/images/projects/globe.jpg
 </div>
 
 <section class="certifications-section mt-5 pt-5">
-  <h2 class="section-title text-center mb-4">Courses & Certifications</h2>
-  <div class="row">
+  <div class="section-header text-center mb-5">
+    <h2 class="display-5">Education & Certifications</h2>
+    <p class="lead text-muted">Continuous learning and professional development</p>
+  </div>
+  
+  <div class="row justify-content-center">
     {% for course in site.data.projects.courses %}
-    <div class="col-md-6 mb-4">
+    <div class="col-lg-6 mb-4">
       <div class="card h-100 certification-card" data-aos="fade-up">
         <div class="card-body">
-          <div class="d-flex align-items-center mb-3">
-            {% if course.image %}
-            <img src="{{ course.image | relative_url }}" alt="{{ course.institution }} logo" class="certification-logo me-3">
-            {% endif %}
-            <div>
+          {% if course.image %}
+          <div class="d-flex align-items-center mb-4">
+            <div class="cert-logo-wrapper me-3">
+              <img 
+                src="{{ course.image | relative_url }}" 
+                alt="{{ course.institution }} logo" 
+                class="certification-logo"
+                loading="lazy"
+              >
+            </div>
+            <div class="cert-header">
               <h3 class="h5 mb-1">{{ course.title }}</h3>
-              <p class="text-muted mb-0">{{ course.institution }}</p>
+              <p class="text-primary mb-0">{{ course.institution }}</p>
             </div>
           </div>
-          <p class="card-text">{{ course.description }}</p>
-          {% if course.certificate %}
-          <a href="{{ course.certificate | relative_url }}" class="btn btn-outline-primary" target="_blank" rel="noopener">
-            View Certificate
-          </a>
           {% endif %}
+          
+          <div class="cert-content">
+            <p class="card-text mb-4">{{ course.description }}</p>
+            {% if course.technologies %}
+            <div class="technologies mb-3">
+              {% for tech in course.technologies %}
+              <span class="badge bg-light text-dark">{{ tech }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          
+          <div class="cert-footer mt-auto">
+            {% if course.certificate %}
+            <a href="{{ course.certificate | relative_url }}" 
+               class="btn btn-outline-primary d-flex align-items-center justify-content-center" 
+               target="_blank" 
+               rel="noopener">
+              <i class="bi bi-award me-2"></i>
+              View Certificate
+            </a>
+            {% endif %}
+            {% if course.url %}
+            <a href="{{ course.url }}" 
+               class="btn btn-link mt-2" 
+               target="_blank" 
+               rel="noopener">
+              Learn more about this course
+            </a>
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>
