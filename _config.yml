@@ -1,12 +1,12 @@
-title: "Thembo Jonathan - Software Engineer"
+title: "Thembo Jonathan"
 subtitle: "Full Stack Developer | Machine Learning Engineer | Data Scientist"
-description: "Experienced software developer specializing in full-stack development, machine learning, and data science. View my projects, skills, and professional experience."
+description: >-
+  Personal website of Thembo Jonathan, a Software Engineer specializing in Full Stack Development and AI/ML.
 baseurl: ""
-
 url: "https://jona42-ui.github.io"
 author: "THEMBO JONATHAN"
-email: "jonathanthembo123@gmail.com"
-phone: "(256) 770688802"
+email: "thembojona42@gmail.com"
+phone: "+256771051142"
 github_username: "jona42-ui"
 linkedin_username: "thembo-jonathan"
 
@@ -26,15 +26,43 @@ sass:
   style: compressed
   sass_dir: assets/scss
 
-# Blog Settings
-paginate: 6
-paginate_path: "/pages/blog/page:num/"
+# Plugin Settings
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .git
+  - .gitignore
+  - README.md
+  - LICENSE
+  - assets
+  - .nojekyll
+
+# Include directories
+include:
+  - assets
+  - _pages
+  - _data
+  - _layouts
 
 # Collections
 collections:
   posts:
     output: true
     permalink: /blog/:year/:month/:day/:title/
+  projects:
+    output: true
+    permalink: /projects/:path/
 
 # Default Settings
 defaults:
@@ -49,12 +77,11 @@ defaults:
       type: "pages"
     values:
       layout: "default"
-      
-# Plugin Settings
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
 # Compression and Optimization
 compress_html:
   clippings: all
@@ -69,12 +96,6 @@ compress_html:
 # Cache Settings
 keep_files:
   - jekyll-paginate
-
-
-# Exclude from processing
-exclude:
-  - assets
-  - .nojekyll
 
 # Progressive Web App
 pwa:
