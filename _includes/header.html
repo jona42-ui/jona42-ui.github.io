@@ -12,8 +12,14 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ '/pages/cv' | relative_url }}">CV</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://thembo.substack.com/">Blog</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Blog
+          </a>
+          <div class="dropdown-menu" aria-labelledby="blogDropdown">
+            <a class="dropdown-item" href="{{ '/pages/blog' | relative_url }}">Personal Blog</a>
+            <a class="dropdown-item" href="https://thembo.substack.com/">Substack</a>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ '/pages/projects' | relative_url }}">Projects</a>
