@@ -1,28 +1,29 @@
-<nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+    <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.author }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarMenu">
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ '/pages/cv' | relative_url }}">CV</a>
+          <a class="nav-link" href="{{ '/pages/projects' | relative_url }}">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ '/pages/education' | relative_url }}">Education</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Blog
           </a>
-          <div class="dropdown-menu" aria-labelledby="blogDropdown">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ '/pages/blog' | relative_url }}">Personal Blog</a>
             <a class="dropdown-item" href="https://thembo.substack.com/">Substack</a>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ '/pages/projects' | relative_url }}">Projects</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/jona42-ui">GitHub</a>
