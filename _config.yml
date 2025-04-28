@@ -28,11 +28,9 @@ sass:
   sass_dir: assets/scss
 
 # Blog Settings
-permalink: /blog/:year/:month/:day/:title/
+permalink: /blog/:title/
 paginate: 6
 paginate_path: "/pages/blog/page:num/"
-gems:
-  - jekyll-paginate
 
 # Collections
 collections:
@@ -40,12 +38,26 @@ collections:
     output: true
     permalink: /blog/:year/:month/:day/:title/
 
+# Default Settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "article"
+      author: "Thembo Jonathan"
+  - scope:
+      path: "pages"
+      type: "pages"
+    values:
+      layout: "default"
+      
 # Plugin Settings
 plugins:
+  - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-paginate
 
 # Compression and Optimization
 compress_html:
