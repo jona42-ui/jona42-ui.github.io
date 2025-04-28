@@ -22,15 +22,32 @@ secondary:
 professional_development:
   - name: Google Certifications
     description: System administration and IT infrastructure services
+    url: https://www.coursera.org/google-certificates
+    period: 2024
     
   - name: OpenMRS Fundamentals Academy Certification
+    description: Healthcare open source software development and implementation
+    url: https://www.openmrs.org
+    period: 2023
     
-  - name: Google Summer of Code
+  - name: CS50x - Introduction to Computer Science
+    description: Harvard's introduction to computer science and programming. Covers C, Python, SQL, JavaScript, HTML, and CSS.
+    url: https://cs50.harvard.edu/x/
+    period: 2023
+    certificate: assets/images/projects/CS50x.pdf
     
-  - name: CS50x
+  - name: Problem Solving and Computational Thinking
+    description: Advanced problem-solving techniques and computational thinking principles from Michigan University
+    url: https://www.coursera.org/
+    period: 2023
+    certificate: assets/images/projects/Coursera YTCSDBTTYNQT.pdf
     
   - name: JavaScript Algorithms and Data Structures
+    description: Advanced JavaScript programming concepts, algorithms, and data structures
+    url: https://www.freecodecamp.org/
+    period: 2023
     
   - name: Responsive Web Design
-    
-  - name: Problem solving and computational thinking
+    description: Modern web design principles, HTML5, CSS3, and responsive layouts
+    url: https://www.freecodecamp.org/
+    period: 2023
