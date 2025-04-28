@@ -11,14 +11,19 @@
 }
 
 :root {
+  --navbar-height: 70px;
   --primary-color: #2563eb;
   --secondary-color: #475569;
   --accent-color: #3b82f6;
+  --text-color: #1f2937;
   --bg-color: #ffffff;
-  --text-color: #1e293b;
   --border-color: #e2e8f0;
-  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
+  --offline-indicator-color: #ef4444;
+  --warning-bg: #fff7ed;
+  --warning-text: #9a3412;
+  --warning-border: #fdba74;
 }
 
 body {
@@ -26,15 +31,15 @@ body {
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--bg-color);
-  padding-top: 60px;
+  padding-top: var(--navbar-height);
 }
 
 // Navbar & Logo
 .navbar {
+  height: var(--navbar-height);
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  padding: 0.5rem 1rem;
   
   .navbar-brand {
     padding: 0;
@@ -53,7 +58,7 @@ body {
 
   .nav-link {
     position: relative;
-    padding: 1rem 0.8rem;
+    padding: 1.25rem 0.8rem;
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s ease;
@@ -436,14 +441,14 @@ body.offline {
     left: 0;
     right: 0;
     height: 2px;
-    background: $offline-indicator-color;
+    background: var(--offline-indicator-color);
     z-index: 9999;
   }
 }
 
 #status-indicator {
-  background-color: $warning-bg;
-  color: $warning-text;
+  background-color: var(--warning-bg);
+  color: var(--warning-text);
   text-align: center;
   padding: 0.5rem;
   position: fixed;
@@ -460,7 +465,7 @@ body.offline {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: $primary-color;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 24px;
@@ -608,7 +613,7 @@ img[src] {
       transition: border-color 0.3s ease;
       
       &:focus {
-        border-color: #2563eb;
+        border-color: var(--primary-color);
         box-shadow: none;
       }
     }
@@ -639,5 +644,113 @@ img[src] {
   
   .contact-form {
     padding: 1.5rem;
+  }
+}
+
+main {
+  margin-top: 2rem;
+}
+
+// Hero Section
+.hero-section {
+  min-height: calc(100vh - var(--navbar-height));
+  padding: 4rem 0;
+  
+  .profile-image-wrapper {
+    position: relative;
+    
+    img {
+      border-radius: 1rem;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+  
+  .hero-content {
+    h1 {
+      font-weight: 700;
+      background: linear-gradient(to right, #1e40af, #3b82f6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .typewriter {
+      font-size: 1.25rem;
+      color: var(--secondary-color);
+      
+      .wrap {
+        border-right: 0.1em solid var(--primary-color);
+        animation: blink 0.7s step-end infinite;
+      }
+    }
+  }
+}
+
+// Social Links
+.social-links {
+  background-color: #f8fafc;
+  border-top: 1px solid var(--border-color);
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    box-shadow: var(--card-shadow);
+    
+    &:hover {
+      transform: translateY(-2px);
+      color: var(--primary-color);
+      box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .fab, .fas {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Animations
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary-color) }
+}
+
+// Offline Indicator
+.offline-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  
+  .offline-message {
+    background-color: var(--warning-bg);
+    color: var(--warning-text);
+    border: 1px solid var(--warning-border);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--offline-indicator-color);
+    z-index: 9999;
   }
 }
