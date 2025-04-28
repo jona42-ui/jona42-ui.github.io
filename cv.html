@@ -1,146 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Boostrap required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"/>
-      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/style.css"/>
-    <title>Thembo Jonathan - CV</title>
-    <link rel="icon" href="images/dna_icon.png" />
-  </head>
-  <body>
-    <!--Bootstrap navbar -->
-    <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="/index.html">Thembo Jonathan</a>
-      <button
-        class="navbar-toggler"
-        data-toggle="collapse"
-        data-target="#navbarMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarMenu">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cv.html">e-cv</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://thembo.substack.com/">Posts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="programming.html">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/jona42-ui">GitHub</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Content -->
-    <div class="container">
-      <div class="row">
-        <img
-          id="profile_picture"
-          src="images/jonaprof.jpg"
-          class="img-fluid"
-          alt="Thembo Jonathan"/>
-      </div>
-      <div class="description" style="text-align:center ;">  
-      <h1>Hi 👋, and Welcome.</h1>
-      <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
-        <ul class="pure-menu-list">
-            
-              <li class="pure-menu-item"><a href="/index.html" class="pure-menu-link">Home</a></li>
-            
-              <li class="pure-menu-item"><a href="/cv.html" class="pure-menu-link">e-cv</a></li>
-            
-              <li class="pure-menu-item"><a href="#" class="pure-menu-link">Posts</a></li>
-            
-              <li class="pure-menu-item"><a href="/programming.html" class="pure-menu-link">Projects</a></li>
-            
-              <li class="pure-menu-item"><a href="https://github.com/jona42-ui" class="pure-menu-link">GitHub</a></li>
-            
-              <li class="pure-menu-item"><a href="about.html" class="pure-menu-link">About</a></li>
-            
-        </ul>
+---
+layout: default
+title: CV & Experience
+description: Professional experience, education, and qualifications of Thembo Jonathan
+keywords: CV, resume, education, software engineering, Makerere University, CampusGeeksinfo
+---
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div id="preamble" class="mb-4">
+                Below is a brief overview of my education and programming experience. 
+                For more details, please see my <a href="https://www.linkedin.com/in/thembo-jonathan-7478701ab/">LinkedIn</a> profile.
+            </div>
+
+            <div class="education-section mb-5">
+                <h4>Education</h4>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h5><a href="https://www.mak.ac.ug/">Makerere University</a></h5>
+                        <p class="timeline-date">2020 - present</p>
+                        <p class="timeline-description">BSc Software Engineering</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h5><a href="https://merrylandhighschools.com/">Merryland High Schools</a></h5>
+                        <p class="timeline-date">2018 - 2019</p>
+                        <p class="timeline-description">High School Education</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h5><a href="https://merrylandhighschools.com/">Merryland High Schools</a></h5>
+                        <p class="timeline-date">2014 - 2017</p>
+                        <p class="timeline-description">Secondary Education</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-section mb-5">
+                <h4>Work Experience</h4>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h5><a href="https://www.campusgeeksinfo.com/">CampusGeeksinfo</a></h5>
+                        <p class="timeline-date">2021 - present</p>
+                        <p class="timeline-description">Founder and Software Engineer</p>
+                        <ul class="experience-details">
+                            <li>Founded and developed a platform for campus-related information and resources</li>
+                            <li>Lead development of web applications using modern technologies</li>
+                            <li>Manage technical infrastructure and team coordination</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h5>Software Development Intern</h5>
+                        <p class="timeline-date">2020 - 2021</p>
+                        <p class="timeline-description">Intern Software Developer</p>
+                        <ul class="experience-details">
+                            <li>Participated in full-stack development projects</li>
+                            <li>Gained hands-on experience with industry best practices</li>
+                            <li>Collaborated with senior developers on various projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-        <!-- Content -->
-        <div id="preamble">Below is a brief overview of my education, and programming experience. For more details, please see my <a href="https://www.linkedin.com/in/thembo-jonathan-7478701ab/">LinkedIn</a> profile.</div>
-        <div class="container mt-5 mb-5">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <h4>Education:</h4>
-                    <ul class="timeline">
-                        <li>
-                            <a href="https://www.mak.ac.ug/">Makerere University</a>
-                            <p class="float-right">2020- present</p>
-                            <p>Bsc Software Engineering</p>
-                        </li>
-                        <ul>
-                            <a href="https://merrylandhighschools.com/">Merryland highschools</a>
-                           <a> <p class="float-right">2018 - 2019</p></a>
-                            <p>High school Education</p>
-                        </ul>
-                        <li>
-                            <a href="https://merrylandhighschools.com/">Merryland highschools</a>
-                           <a> <p class="float-right">2014 - 2017</p></a>
-                            <p>Secondary Education</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container mt-5 mb-5">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <h4>Work Experience:</h4>
-                    <ul class="timeline">
-                        <li>
-                            <a href="https://www.campusgeeksinfo.com/">CampusGeeksinfo</a>
-                            <p class="float-right">2021 - present</p>
-                            <p>Founder and Software Engineer</p>
-                        </li>
-                        <li>
-                            <a href="https://www.example.com/">Example Company</a>
-                            <p class="float-right">2020 - 2021</p>
-                            <p>Intern Software Developer</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <footer class="footer">
-                <ul class="footer__nav">
-                </ul>
-               
-                <p class="footer__copyright">
-                  &copy; 2021
-                  <a
-                    class="footer__link linkedin"
-                    target="_blank"
-                    href="https://www.linkedin.com/in/thembo-jonathan-7478701ab/"
-                    >Thembo Jonathan</a
-                  >.
-                </p>
-              </footer>
-            </div>
-    </body>
-</html>

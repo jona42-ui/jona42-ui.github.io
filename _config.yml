@@ -1,122 +1,65 @@
 # Site Settings
-
+title: Thembo Jonathan
+description: Software Engineer with expertise in AI/ML and distributed systems
 url: "https://jona42-ui.github.io"
-formspree_id: "https://formspree.io/f/mgvkowvz" # Replace this with your actual Formspree form ID
-title: "Thembo Jonathan - Software Engineer"
-subtitle: "Full Stack Developer | Machine Learning Engineer | Data Scientist"
-description: "Experienced software developer specializing in full-stack development, machine learning, and data science. View my projects, skills, and professional experience."
-
-
+baseurl: ""
+lang: en
+timezone: UTC
 
 # Build settings
 markdown: kramdown
+remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-paginate
+  - jekyll-remote-theme
 
-# Exclude from processing
+# Author details
+author: Thembo Jonathan
+email: jonathekr7@gmail.com
+github_username: jona42-ui
+linkedin_username: thembo-jonathan-7478701ab
+
+# Default settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Thembo Jonathan"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# SEO and Social settings
+twitter:
+  username: 
+  card: summary_large_image
+logo: /assets/images/profile/jonaprof.png
+social:
+  name: Thembo Jonathan
+  links:
+    - https://github.com/jona42-ui
+    - https://www.linkedin.com/in/thembo-jonathan-7478701ab/
+
+# PWA settings
+pwa:
+  enabled: true
+  sw_filename: sw.js
+  icon_path: /assets/images/dna_icon.png
+
+# Exclude files from processing
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
   - .git
-
-  - assets
-  - .nojekyll
-
-# Progressive Web App
-pwa:
-  enabled: true
-  manifest: "/manifest.json"
-  theme_color: "#2563eb"
-  background_color: "#ffffff"
-  display: "standalone"
-  scope: "/"
-  start_url: "/"
-  icons:
-    - src: "/assets/images/dna_icon.png"
-      sizes: "192x192"
-      type: "image/png"
-
-# Analytics and Tracking
-google_analytics: "your-ga-id"
-google_site_verification: "your-verification-code"
-
-# Performance Optimization
-limit_posts: 10
-future: false
-unpublished: false
-source: "."
-destination: "./_site"
-encoding: "utf-8"
-strict_front_matter: true
-
- 
-
-# Compression and Optimization
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: all
-  ignore:
-    envs: [development]
-  blanklines: false
-  profile: false
-  startings: [html, head, body]
-
-# Cache Settings
-keep_files:
-  - jekyll-feed
-
-sass:
-  style: compressed
-  sass_dir: assets/scss
-
-# Blog Settings
-paginate: 6
-paginate_path: "/pages/blog/page:num/"
-
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /blog/:year/:month/:day/:title/
-
-# Default Settings
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "article"
-      author: "Thembo Jonathan"
-  - scope:
-      path: "pages"
-      type: "pages"
-    values:
-      layout: "default"
-      
-
-
-
-author: "THEMBO JONATHAN"
-email: "jonathanthembo123@gmail.com"
-phone: "(256) 770688802"
-github_username: "jona42-ui"
-linkedin_username: "thembo-jonathan"
-
-# SEO Settings
-lang: "en"
-locale: "en_US"
-keywords: "software developer, full stack developer, machine learning engineer, data scientist, web development, portfolio"
-social:
-  name: THEMBO JONATHAN
-  links:
-    - https://github.com/jona42-ui
-    - https://www.linkedin.com/in/thembo-jonathan/
-
-# Build Settings
+  - README.md
+  - package.json
+  - package-lock.json
+  - yarn.lock
 
