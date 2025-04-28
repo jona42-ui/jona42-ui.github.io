@@ -22,13 +22,11 @@ social:
 
 # Build Settings
 markdown: kramdown
-permalink: pretty
 sass:
   style: compressed
   sass_dir: assets/scss
 
 # Blog Settings
-permalink: /blog/:title/
 paginate: 6
 paginate_path: "/pages/blog/page:num/"
 
