@@ -280,7 +280,9 @@ DEPENDENCIES
   jekyll-paginate
   jekyll-seo-tag
   jekyll-sitemap
-  webrick (~> 1.9)
+  tzinfo (>= 1, < 3)
+  tzinfo-data
+  webrick
 
 BUNDLED WITH
    2.4.20
