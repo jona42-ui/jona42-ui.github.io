@@ -15,10 +15,10 @@ As a software engineer diving into the world of AI and Machine Learning, I've le
 
 Before diving into frameworks and libraries, it's crucial to understand the mathematical foundations:
 
-- Linear Algebra
-- Calculus
-- Probability and Statistics
-- Optimization Theory
+* Linear Algebra
+* Calculus
+* Probability and Statistics
+* Optimization Theory
 
 These concepts form the backbone of machine learning algorithms and will help you understand why certain approaches work better than others.
 
@@ -42,18 +42,18 @@ model = tf.keras.Sequential([
 
 Here are some resources that helped me in my journey:
 
-1. Fast.ai Course
-2. Stanford's CS231n
-3. deeplearning.ai Specialization
-4. Practical Deep Learning for Coders
+* Fast.ai Course
+* Stanford's CS231n
+* deeplearning.ai Specialization
+* Practical Deep Learning for Coders
 
 ## Real-world Applications
 
 I'll share some practical examples from my experience working on:
 
-- Computer Vision projects
-- Natural Language Processing
-- Time Series Analysis
+* Computer Vision projects
+* Natural Language Processing
+* Time Series Analysis
 
 ## Next Steps
 
