@@ -48,10 +48,27 @@ body {
     left: 0;
     z-index: 1030;
   }
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navbar-nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
 }
 
 .navbar-brand {
   padding: 0;
+  margin-right: auto;
   
   .logo-img {
     height: 40px;
@@ -65,13 +82,17 @@ body {
 }
 
 .nav-link {
-  color: #1a1a1a !important;
+  color: var(--text-color) !important;
   font-weight: 500;
   padding: 0.5rem 1rem !important;
   transition: color 0.3s ease;
   
   &:hover, &.active {
-    color: #2563eb !important;
+    color: var(--primary-color) !important;
+  }
+
+  i {
+    font-size: 1.2rem;
   }
 }
 
