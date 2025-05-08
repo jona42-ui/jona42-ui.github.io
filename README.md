@@ -44,6 +44,23 @@ git clone https://github.com/jona42-ui/jona42-ui.github.io.git
 cd jona42-ui.github.io
 ```
 
+## Configuration
+
+### NewsAPI Setup
+
+This site uses NewsAPI to display the latest tech news. To configure the API:
+
+1. Get your API key from [NewsAPI](https://newsapi.org)
+2. Add your API key to `_config.yml`:
+   ```yaml
+   news_api_key: "your_api_key_here"
+   ```
+
+⚠️ **Important Security Notes:**
+- The free tier of NewsAPI only works on localhost and has a limit of 100 requests per day
+- For production, you'll need a paid API key that supports CORS and higher rate limits
+- Consider using environment variables or a backend proxy in production to protect your API key
+
 3. Install dependencies:
 ```bash
 bundle install
