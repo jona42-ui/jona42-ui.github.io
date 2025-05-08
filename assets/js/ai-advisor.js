@@ -206,7 +206,7 @@ class AICareerAdvisor {
 
     async getApiKey() {
         // In production, this should be loaded securely from your backend
-        return 'process.env.API_KEY';
+        return process.env.API_KEY;
     }
 }
 
