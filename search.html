@@ -1,0 +1,15 @@
+---
+layout: default
+title: Search
+permalink: /search/
+---
+
+<div class="container py-5">
+    <div class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="Search posts..." aria-label="Search posts">
+        <span class="search-shortcut">⌘K</span>
+    </div>
+    <div id="search-results" class="search-results"></div>
+</div>
+
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>
