@@ -10,6 +10,9 @@ phone: "+256770688802"
 github_username: "jona42-ui"
 linkedin_username: "thembo-jonathan"
 
+# NewsAPI Configuration
+news_api_key: "f875893c03544204ae4fc4c0f377ac3e"
+
 # SEO Settings
 lang: "en"
 locale: "en_US"

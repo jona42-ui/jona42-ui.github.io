@@ -1,0 +1,31 @@
+---
+layout: default
+title: Tech News
+permalink: /news/
+---
+{% if site.news_api_key %}
+<meta name="news-api-key" content="{{ site.news_api_key }}">
+{% else %}
+<!-- Warning: News API key is not configured -->
+{% endif %}
+
+<div class="container py-5">
+    <header class="text-center mb-5">
+        <h1 class="display-4">Latest Tech News</h1>
+        <p class="lead text-muted">Stay updated with the latest technology news and developments</p>
+    </header>
+
+    <div id="news-loading" class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading news...</span>
+        </div>
+    </div>
+
+    <div id="news-error" class="alert alert-danger text-center hidden" role="alert">
+        Failed to load news. Please try again later.
+    </div>
+
+    <div id="news-container" class="news-grid"></div>
+</div>
+
+<script src="{{ '/assets/js/news.js' | relative_url }}"></script>

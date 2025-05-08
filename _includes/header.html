@@ -19,6 +19,9 @@
                         <a class="nav-link {% if page.url == '/cv.html' %}active{% endif %}" href="{{ '/cv.html' | relative_url }}">CV</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {% if page.url == '/news/' %}active{% endif %}" href="{{ '/news/' | relative_url }}">Tech News</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">
                             <i class="fab fa-github"></i>
                         </a>
