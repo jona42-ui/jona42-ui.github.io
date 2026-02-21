@@ -1,7 +1,7 @@
 title: "Thembo Jonathan"
-subtitle: "Full Stack Developer | Machine Learning Engineer | Data Scientist"
+subtitle: "Software Engineer"
 description: >-
-  Personal website of Thembo Jonathan, a Software Engineer specializing in Full Stack Development and AI/ML.
+  Personal website of Thembo Jonathan, a Software Engineer specializing in AI, IOT and Web domains.
 baseurl: ""
 url: "https://jona42-ui.github.io"
 author: "THEMBO JONATHAN"
@@ -10,13 +10,10 @@ phone: "+256770688802"
 github_username: "jona42-ui"
 linkedin_username: "thembo-jonathan"
 
-# NewsAPI Configuration
-news_api_key: "f875893c03544204ae4fc4c0f377ac3e"
-
 # SEO Settings
 lang: "en"
 locale: "en_US"
-keywords: "software developer, full stack developer, machine learning engineer, data scientist, web development, portfolio"
+keywords: "software engineer, AI/ML systems, web development, full stack developer, portfolio"
 social:
   name: THEMBO JONATHAN
   links:
@@ -26,18 +23,6 @@ social:
 # Build Settings
 markdown: kramdown
 highlighter: rouge
-
-# Sass
-sass:
-  style: compressed
-  sass_dir: assets/scss
-
-# Plugin Settings
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-paginate
 
 # Exclude from processing
 exclude:
@@ -52,83 +37,18 @@ exclude:
   - .gitignore
   - README.md
   - LICENSE
+  - _layouts
+  - _includes
+  - pages
 
 # Include directories
 include:
   - assets
   - .nojekyll
-  - _pages
-  - _data
-  - _layouts
-
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /blog/:year/:month/:day/:title/
-  projects:
-    output: true
-    permalink: /projects/:path/
-
-# Default Settings
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "article"
-      author: "Thembo Jonathan"
-  - scope:
-      path: "pages"
-      type: "pages"
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-
-# Compression and Optimization
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: all
-  ignore:
-    envs: [development]
-  blanklines: false
-  profile: false
-  startings: [html, head, body]
-
-# Cache Settings
-keep_files:
-  - .git
-  - .svn
-  - assets
-  - .nojekyll
-
-# Progressive Web App
-pwa:
-  enabled: true
-  manifest: "/manifest.json"
-  theme_color: "#2563eb"
-  background_color: "#ffffff"
-  display: "standalone"
-  scope: "/"
-  start_url: "/"
-  icons:
-    - src: "/assets/images/dna_icon.png"
-      sizes: "192x192"
-      type: "image/png"
-
-# Analytics and Tracking
-google_analytics: "your-ga-id"
-google_site_verification: "your-verification-code"
 
 # Performance Optimization
-limit_posts: 10
 future: false
 unpublished: false
 source: "."
 destination: "./_site"
 encoding: "utf-8"
-strict_front_matter: true

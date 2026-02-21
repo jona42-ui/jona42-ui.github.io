@@ -1,89 +1,26 @@
 featured:
-  - title: "Enterprise Contract Management System"
-    description: "Led development of an enterprise-grade Contract Management System using NestJS and PostgreSQL, featuring advanced document lifecycle management and complex pricing calculations."
-    image: "/assets/images/projects/contract-management.jpg"
-    url: "https://github.com/jona42-ui"
-    technologies:
-      - NestJS
-      - TypeScript
-      - PostgreSQL
-      - Prisma
-      - Docker
-      - JWT
-      - OpenAPI
-    highlights:
-      - "Reduced contract processing time significantly"
-      - "Implemented role-based access control"
-      - "Built complex pricing calculation engine"
-      - "Automated document workflow processing"
-
-  - title: "Italian Geospatial Platform"
-    description: "Developed a high-performance geospatial management system handling 1M+ Italian administrative boundaries with optimized query response times."
-    image: "/assets/images/projects/geo-admin.jpg"
-    url: "https://github.com/jona42-ui"
-    technologies:
-      - NestJS
-      - TypeScript
-      - MySQL
-      - Prisma
-      - Docker
-      - Turf.js
-      - Mapbox
-    highlights:
-      - "60% reduction in query response time"
-      - "Custom brick-based spatial indexing"
-      - "99.9% system uptime achievement"
-      - "90%+ test coverage"
-
-  - title: "Patient Consent Management App"
-    description: "Built an interactive patient education and consent management system with sophisticated video integration and responsive design."
-    image: "/assets/images/projects/patient-consent.jpg"
-    url: "https://github.com/jona42-ui"
-    technologies:
-      - React
-      - TypeScript
-      - CSS Grid
-      - Flexbox
-      - Video.js
-    highlights:
-      - "Custom video player implementation"
-      - "Multi-step content navigation"
-      - "Mobile-first responsive design"
-      - "Optimized asset loading"
-
-  - title: "Teams Meeting Summarizer"
-    description: "Developed a Microsoft Teams bot that automatically processes meeting transcripts using Azure OpenAI to generate summaries and action items."
-    image: "/assets/images/projects/meeting-bot.jpg"
-    url: "https://github.com/jona42-ui"
-    technologies:
-      - Azure Bot Service
-      - Azure OpenAI
-      - TypeScript
-      - Graph API
-      - Node.js
-    highlights:
-      - "Intelligent transcript processing"
-      - "Real-time event handling"
-      - "Certificate-based encryption"
-      - "Comprehensive telemetry"
-
-  - title: "NetConfigMaster"
-    description: "Built an AI-powered network configuration management system using natural language processing to translate commands into Nmstate configurations."
-    image: "/assets/images/projects/network-config.jpg"
-    url: "https://github.com/jona42-ui"
+  - title: Drug Absorption Prediction Model
+    description: >
+      Developed a machine learning pipeline to predict drug permeability through human intestinal cells (Caco2 model).
+      The project enhances predictive modeling of drug absorption using binary classification and advanced feature engineering.
     technologies:
       - Python
-      - Flask
-      - PyTorch
-      - Docker
-      - Nmstate
-    highlights:
-      - "91.18% accuracy in schema validation"
-      - "70% reduction in config time"
-      - "Custom ML model implementation"
-      - "Real-time validation"
+      - Scikit-Learn
+      - Machine Learning
+    image: assets/images/projects/globe.jpg
+    url: https://github.com/jona42-ui/Drug-Absorption-Model
 
-# Keep existing courses section if present
+  - title: OpenMRS Clinical Image Annotation
+    description: >
+      Frontend module for OpenMRS that enables physical patient documentation through visual image annotation.
+      Part of Google Summer of Code 2023 contribution.
+    technologies:
+      - JavaScript
+      - React
+      - OpenMRS
+    image: assets/images/projects/9.jpg
+    url: https://github.com/jona42-ui/openmrs-frontend
+
 courses:
   - title: CS50 - Introduction to Computer Science
     institution: Harvard University

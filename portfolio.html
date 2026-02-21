@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thembo Jonathan - Software Engineer</title>
+  <title>Portfolio - Thembo Jonathan</title>
   <link rel="stylesheet" href="styles/simple.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,41 +14,68 @@
   <nav class="navbar">
     <button class="menu-toggle" aria-label="Toggle menu">☰</button>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="resume.html">Resume</a>
-      <a href="portfolio.html">Portfolio</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
     </div>
   </nav>
 
   <main>
-    <section class="hero">
-      <h1>Software<br>Engineer</h1>
-      <p>I am Thembo Jonathan, a Software Engineer in<br>AI/ML, IOT and Web domains.</p>
-    </section>
+    <section class="portfolio-section">
+      <h1>Portfolio</h1>
+      <p class="subtitle">Featured projects and work</p>
 
-    <section class="content">
-      <h2>Familiarize yourself with my experience</h2>
-      <p>Carefully crafted resume that represents my experiences in a user-friendly fashion.<br>Check 'em out!</p>
-      
-      <div class="cards">
-        <div class="card">
-          <a href="resume.html" class="card-preview-link">
-            <div class="card-preview">
-              <iframe src="resume.html" class="preview-iframe" tabindex="-1" loading="lazy"></iframe>
+      <div class="portfolio-content">
+        <div class="project-item">
+          <div class="project-image">
+            <img src="assets/images/projects/globe.jpg" alt="Drug Absorption Model" onerror="this.style.backgroundColor='#e0e7ff'">
+          </div>
+          <div class="project-details">
+            <h2>Drug Absorption Prediction Model</h2>
+            <p>Developed a machine learning pipeline to predict drug permeability through human intestinal cells (Caco2 model). The project enhances predictive modeling of drug absorption using binary classification and advanced feature engineering.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>Scikit-Learn</span>
+              <span>Machine Learning</span>
             </div>
-          </a>
-          <p><a href="resume.html">Click</a> to view my CV online or<br><a href="#" id="download-resume-pdf">download</a> the pdf directly</p>
+            <a href="https://github.com/jona42-ui/Drug-Absorption-Model" target="_blank" class="btn-link">View Project →</a>
+          </div>
         </div>
-        
-        <div class="card">
-          <a href="portfolio.html" class="card-preview-link">
-            <div class="card-preview">
-              <iframe src="portfolio.html" class="preview-iframe" tabindex="-1" loading="lazy"></iframe>
+
+        <div class="project-item">
+          <div class="project-image">
+            <img src="assets/images/projects/9.jpg" alt="OpenMRS Clinical Image Annotation" onerror="this.style.backgroundColor='#dbeafe'">
+          </div>
+          <div class="project-details">
+            <h2>OpenMRS Clinical Image Annotation</h2>
+            <p>Frontend module for OpenMRS that enables physical patient documentation through visual image annotation. Part of Google Summer of Code 2023 contribution.</p>
+            <div class="tech-tags">
+              <span>JavaScript</span>
+              <span>React</span>
+              <span>OpenMRS</span>
             </div>
-          </a>
-          <p><a href="portfolio.html">Click</a> to view my Portfolio<br>online or <a href="#" id="download-portfolio-pdf">download</a> the pdf directly</p>
+            <a href="https://github.com/jona42-ui/openmrs-frontend" target="_blank" class="btn-link">View Project →</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-image">
+            <img src="assets/images/projects/CS50x.png" alt="CS50 Certificate" onerror="this.style.backgroundColor='#fef3c7'">
+          </div>
+          <div class="project-details">
+            <h2>CS50 - Introduction to Computer Science</h2>
+            <p>Harvard University's introduction to computer science and programming covering C, Python, SQL, and web development. Completed comprehensive coursework and projects.</p>
+            <div class="tech-tags">
+              <span>C</span>
+              <span>Python</span>
+              <span>SQL</span>
+              <span>JavaScript</span>
+            </div>
+            <a href="https://cs50.harvard.edu/" target="_blank" class="btn-link">View Course →</a>
+          </div>
         </div>
       </div>
+
     </section>
   </main>
 
@@ -78,7 +105,6 @@
     <p>Copyright © 2026 Thembo Jonathan</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
   <script>
     document.querySelector('.menu-toggle').addEventListener('click', function(e) {
       e.stopPropagation();
@@ -91,42 +117,6 @@
       if (!nav.contains(e.target) && !toggle.contains(e.target)) {
         nav.classList.remove('active');
       }
-    });
-
-    // Generate PDF from resume page content
-    document.getElementById('download-resume-pdf').addEventListener('click', function(e) {
-      e.preventDefault();
-      var iframe = document.querySelectorAll('.preview-iframe')[0];
-      var doc = iframe.contentDocument || iframe.contentWindow.document;
-      var content = doc.querySelector('.resume-container');
-      if (!content) { window.location.href = 'resume.html'; return; }
-      var opt = {
-        margin: [10, 10, 10, 10],
-        filename: 'Thembo_Jonathan_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-      };
-      html2pdf().set(opt).from(content).save();
-    });
-
-    // Generate PDF from portfolio page content
-    document.getElementById('download-portfolio-pdf').addEventListener('click', function(e) {
-      e.preventDefault();
-      var iframe = document.querySelectorAll('.preview-iframe')[1];
-      var doc = iframe.contentDocument || iframe.contentWindow.document;
-      var content = doc.querySelector('.portfolio-section');
-      if (!content) { window.location.href = 'portfolio.html'; return; }
-      var opt = {
-        margin: [10, 10, 10, 10],
-        filename: 'Thembo_Jonathan_Portfolio.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-      };
-      html2pdf().set(opt).from(content).save();
     });
   </script>
 </body>
