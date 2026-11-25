@@ -1056,25 +1056,205 @@ footer p {
   }
 }
 
-@media print {
-  .navbar,
-  footer,
-  .download-section,
-  .pf-filters {
-    display: none;
-  }
-
-  .pf-card {
-    break-inside: avoid;
-    box-shadow: none;
-  }
-
-  .resume-section,
-  .portfolio-section {
-    padding: 1rem;
-  }
-}
 
 /* Illustrated covers don't need the photo darkening fade */
 .pf-cover-art::after { display: none; }
 .pf-featured .pf-badge { left: auto; right: 0.9rem; }
+
+/* ---------- Resume: compact meta line (company · location · dates) ---------- */
+.experience-entry,
+.education-entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0;
+}
+
+.experience-entry > .job-title,
+.experience-entry > .job-duties,
+.education-entry > .degree-title,
+.education-entry > .edu-description {
+  flex-basis: 100%;
+}
+
+.experience-entry > .company-name,
+.experience-entry > .job-location,
+.experience-entry > .job-period,
+.education-entry > .institution-name,
+.education-entry > .edu-location,
+.education-entry > .edu-period {
+  margin: 0;
+}
+
+.experience-entry > .job-location::before,
+.experience-entry > .job-period::before,
+.education-entry > .edu-location::before,
+.education-entry > .edu-period::before {
+  content: "·";
+  margin: 0 0.5rem;
+  color: #9ca3af;
+}
+
+.experience-entry > .job-period,
+.education-entry > .edu-period {
+  font-weight: 500;
+  color: #374151;
+}
+
+.education-entry { margin-bottom: 1rem; }
+
+.print-links { display: none; }
+
+.pdf-download-btn { color: #fff; }
+
+/* ---------- Print / PDF ---------- */
+@page {
+  size: A4;
+  margin: 13mm 14mm 13mm;
+}
+
+@media print {
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .navbar,
+  footer,
+  .download-section,
+  .download-btn-container,
+  .social-links-header,
+  .pf-filters {
+    display: none !important;
+  }
+
+  /* Resume */
+  .resume-main { padding: 0; background: #fff; min-height: 0; }
+
+  .resume-container {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .cv-header {
+    gap: 1.25rem;
+    margin-bottom: 1.1rem;
+    align-items: center;
+  }
+
+  .cv-header { flex-direction: row !important; text-align: left !important; }
+  .header-details { align-items: flex-start !important; }
+
+  .profile-img { width: 72px; height: 72px; }
+
+  .cert-list {
+    columns: 2;
+    column-gap: 2rem;
+  }
+
+  .cv-section:last-of-type .cert-list { columns: 1; }
+
+  .info-section h1 { font-size: 22pt; margin-bottom: 0.3rem; }
+
+  .header-details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1.1rem;
+    row-gap: 0.15rem;
+  }
+
+  .detail-item { font-size: 9pt; }
+
+  .print-links {
+    display: block;
+    flex-basis: 100%;
+    font-size: 9pt;
+    color: #2563eb;
+    margin: 0;
+  }
+
+  .cv-section { margin-bottom: 1rem; }
+
+  .section-title {
+    font-size: 12pt;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.25rem;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .section-title svg { width: 15px; height: 15px; }
+
+  .section-content,
+  .skill-row { font-size: 9.5pt; line-height: 1.5; }
+
+  .skills-content { gap: 0.25rem; }
+
+  .experience-entry { margin-bottom: 0.8rem; }
+
+  .job-title,
+  .degree-title {
+    font-size: 10.5pt;
+    margin-bottom: 0.1rem;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .company-name,
+  .job-location,
+  .job-period,
+  .institution-name,
+  .edu-location,
+  .edu-period { font-size: 9pt; }
+
+  .company-name svg { width: 11px; height: 11px; }
+
+  .job-duties { margin: 0.3rem 0 0 1.1rem; }
+
+  .job-duties li,
+  .cert-list li {
+    font-size: 9.2pt;
+    line-height: 1.45;
+    margin-bottom: 0.15rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .education-entry { margin-bottom: 0.45rem; break-inside: avoid; }
+
+  /* Portfolio */
+  .portfolio-section { padding: 0; max-width: none; }
+  .pf-header { margin-bottom: 1.25rem; }
+  .portfolio-section h1 { font-size: 26pt; }
+  .portfolio-section .subtitle { margin-bottom: 1rem; }
+  .pf-stats { margin-bottom: 0; }
+  .portfolio-content.pf-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem;
+  }
+  .pf-stats { grid-template-columns: repeat(4, 1fr) !important; }
+  .pf-stat { padding: 0.7rem; }
+  .pf-stat strong { font-size: 16pt; }
+  .pf-cover { aspect-ratio: 2 / 1; }
+  .pf-cover-art svg { width: 56px; height: 56px; }
+  .pf-featured { flex-direction: row !important; }
+  .pf-featured .pf-cover { flex: 0 0 45% !important; aspect-ratio: auto !important; min-height: 0 !important; }
+  .pf-highlights { gap: 0.2rem; margin-bottom: 0.6rem; }
+  .pf-card .tech-tags { margin-bottom: 0.6rem; }
+  .pf-card .tech-tags span { font-size: 7.5pt; padding: 0.2rem 0.5rem; }
+  .pf-footer { padding-top: 0.5rem; font-size: 8.5pt; }
+
+  .pf-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none;
+    transform: none !important;
+  }
+
+  .pf-body { padding: 1rem 1.1rem; }
+  .pf-body h2 { font-size: 13pt; }
+  .pf-body p, .pf-highlights li { font-size: 9pt; }
+}

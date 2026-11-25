@@ -25,7 +25,7 @@
       <!-- Header with photo and info -->
       <header class="cv-header">
         <div class="profile-section">
-          <img src="assets/images/profile/jonaprof.jpg" alt="Thembo Jonathan" class="profile-img">
+          <img src="assets/images/profile/jonaprof-sm.jpg" alt="Thembo Jonathan" class="profile-img">
         </div>
         <div class="info-section">
           <h1>Thembo Jonathan</h1>
@@ -48,6 +48,7 @@
               </svg>
               jonathanthembo123@gmail.com
             </p>
+            <p class="print-links">jona42-ui.github.io · github.com/jona42-ui · linkedin.com/in/thembo-jonathan</p>
             <div class="social-links-header">
               <a href="https://jona42-ui.github.io" target="_blank" title="Website">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -342,12 +343,11 @@
       </section>
 
       <div class="download-btn-container">
-        <button id="download-pdf-btn" class="pdf-download-btn" title="Download PDF">
+        <a href="Thembo_Jonathan_Resume.pdf" download class="pdf-download-btn" title="Download PDF" aria-label="Download resume as PDF">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
           </svg>
-          PDF
-        </button>
+        </a>
       </div>
     </div>
   </main>
@@ -373,7 +373,6 @@
     <p>Copyright © 2026 Thembo Jonathan</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
   <script>
     document.querySelector('.menu-toggle').addEventListener('click', function(e) {
       e.stopPropagation();
@@ -386,43 +385,6 @@
       if (!nav.contains(e.target) && !toggle.contains(e.target)) {
         nav.classList.remove('active');
       }
-    });
-
-    document.getElementById('download-pdf-btn').addEventListener('click', function() {
-      const element = document.querySelector('.resume-container');
-      const btn = this;
-      const navbar = document.querySelector('.navbar');
-      const footer = document.querySelector('footer');
-      const downloadContainer = document.querySelector('.download-btn-container');
-
-      // Hide elements not needed in PDF
-      navbar.style.display = 'none';
-      footer.style.display = 'none';
-      downloadContainer.style.display = 'none';
-
-      const opt = {
-        margin: [10, 10, 10, 10],
-        filename: 'Thembo_Jonathan_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-          scale: 2,
-          useCORS: true,
-          letterRendering: true
-        },
-        jsPDF: {
-          unit: 'mm',
-          format: 'a4',
-          orientation: 'portrait'
-        },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-      };
-
-      html2pdf().set(opt).from(element).save().then(function() {
-        // Restore hidden elements
-        navbar.style.display = '';
-        footer.style.display = '';
-        downloadContainer.style.display = '';
-      });
     });
   </script>
 </body>

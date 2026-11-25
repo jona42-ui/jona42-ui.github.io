@@ -35,6 +35,17 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
+      - name: Generate resume & portfolio PDFs
+        continue-on-error: true  # committed PDFs remain as fallback
+        run: |
+          CHROME=$(command -v google-chrome || command -v chromium)
+          for pair in Resume:resume Portfolio:portfolio; do
+            name=${pair%%:*}; page=${pair##*:}
+            "$CHROME" --headless=new --no-sandbox --disable-gpu --no-pdf-header-footer \
+              --virtual-time-budget=15000 \
+              --print-to-pdf="_site/Thembo_Jonathan_${name}.pdf" \
+              "file://$PWD/_site/${page}.html"
+          done
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

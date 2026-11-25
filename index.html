@@ -37,7 +37,7 @@
               <iframe src="resume.html" class="preview-iframe" tabindex="-1" loading="lazy"></iframe>
             </div>
           </a>
-          <p><a href="resume.html">Click</a> to view my CV online or<br><a href="#" id="download-resume-pdf">download</a> the pdf directly</p>
+          <p><a href="resume.html">Click</a> to view my CV online or<br><a href="Thembo_Jonathan_Resume.pdf" download>download</a> the pdf directly</p>
         </div>
         
         <div class="card">
@@ -46,7 +46,7 @@
               <iframe src="portfolio.html" class="preview-iframe" tabindex="-1" loading="lazy"></iframe>
             </div>
           </a>
-          <p><a href="portfolio.html">Click</a> to view my Portfolio<br>online or <a href="#" id="download-portfolio-pdf">download</a> the pdf directly</p>
+          <p><a href="portfolio.html">Click</a> to view my Portfolio<br>online or <a href="Thembo_Jonathan_Portfolio.pdf" download>download</a> the pdf directly</p>
         </div>
       </div>
     </section>
@@ -78,7 +78,6 @@
     <p>Copyright © 2026 Thembo Jonathan</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
   <script>
     document.querySelector('.menu-toggle').addEventListener('click', function(e) {
       e.stopPropagation();
@@ -91,42 +90,6 @@
       if (!nav.contains(e.target) && !toggle.contains(e.target)) {
         nav.classList.remove('active');
       }
-    });
-
-    // Generate PDF from resume page content
-    document.getElementById('download-resume-pdf').addEventListener('click', function(e) {
-      e.preventDefault();
-      var iframe = document.querySelectorAll('.preview-iframe')[0];
-      var doc = iframe.contentDocument || iframe.contentWindow.document;
-      var content = doc.querySelector('.resume-container');
-      if (!content) { window.location.href = 'resume.html'; return; }
-      var opt = {
-        margin: [10, 10, 10, 10],
-        filename: 'Thembo_Jonathan_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-      };
-      html2pdf().set(opt).from(content).save();
-    });
-
-    // Generate PDF from portfolio page content
-    document.getElementById('download-portfolio-pdf').addEventListener('click', function(e) {
-      e.preventDefault();
-      var iframe = document.querySelectorAll('.preview-iframe')[1];
-      var doc = iframe.contentDocument || iframe.contentWindow.document;
-      var content = doc.querySelector('.portfolio-section');
-      if (!content) { window.location.href = 'portfolio.html'; return; }
-      var opt = {
-        margin: [10, 10, 10, 10],
-        filename: 'Thembo_Jonathan_Portfolio.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-      };
-      html2pdf().set(opt).from(content).save();
     });
   </script>
 </body>
