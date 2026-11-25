@@ -1,0 +1,13 @@
+---
+import SocialIcon from './SocialIcon.astro';
+import { profile } from '../data/resume';
+const year = new Date().getFullYear();
+---
+<footer>
+  <div class="social-links">
+    <a href={profile.github} target="_blank" rel="noopener" aria-label="GitHub"><SocialIcon name="github" /></a>
+    <a href={profile.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn"><SocialIcon name="linkedin" /></a>
+    <a href={`mailto:${profile.email}`} aria-label="Email"><SocialIcon name="email" /></a>
+  </div>
+  <p>Copyright © {year} {profile.name}</p>
+</footer>

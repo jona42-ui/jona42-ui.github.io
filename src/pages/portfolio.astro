@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects, categories, stats } from '../data/projects';
+---
+<Base title="Portfolio" description="Production integrations, data platforms and AI systems built by Thembo Jonathan.">
+  <main>
+    <section class="portfolio-section">
+      <header class="pf-header">
+        <span class="pf-eyebrow">Selected work · 2022 — Present</span>
+        <h1>Portfolio</h1>
+        <p class="subtitle">Production integrations, data platforms and AI systems I've designed, built and shipped.</p>
+
+        <div class="pf-stats">
+          {stats.map((s) => <div class="pf-stat"><strong>{s.value}</strong><span>{s.label}</span></div>)}
+        </div>
+
+        <div class="pf-filters" aria-label="Filter projects">
+          {categories.map((c, i) => (
+            <button class:list={['pf-filter', { 'is-active': i === 0 }]} data-filter={c.id} aria-pressed={i === 0 ? 'true' : 'false'}>{c.label}</button>
+          ))}
+        </div>
+      </header>
+
+      <div class="portfolio-content pf-grid">
+        {projects.map((p) => <ProjectCard project={p} />)}
+      </div>
+
+      <p class="pf-empty" hidden>No projects in this category yet.</p>
+    </section>
+  </main>
+</Base>
+
+<script>
+  const filters = document.querySelectorAll<HTMLButtonElement>('.pf-filter');
+  const cards = document.querySelectorAll<HTMLElement>('.pf-card');
+  const empty = document.querySelector<HTMLElement>('.pf-empty')!;
+  filters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter!;
+      let shown = 0;
+      filters.forEach((b) => {
+        b.classList.toggle('is-active', b === btn);
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+      cards.forEach((card) => {
+        const match = f === 'all' || card.dataset.cat!.split(' ').includes(f);
+        card.hidden = !match;
+        if (match) shown++;
+      });
+      empty.hidden = shown !== 0;
+    });
+  });
+</script>

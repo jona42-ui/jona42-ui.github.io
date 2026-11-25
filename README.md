@@ -1,84 +1,42 @@
-# Personal Portfolio Website
+# jona42-ui.github.io
 
-A clean, minimal portfolio website showcasing my work as a Software Engineer. Visit at [jona42-ui.github.io](https://jona42-ui.github.io).
+Personal site of Thembo Jonathan — built with [Astro](https://astro.build), deployed to GitHub Pages.
 
-## Features
+## Updating content
 
-- Simple, clean design inspired by modern minimalism
-- Three main pages: Home, Resume, Portfolio
-- Fully responsive mobile-first design
-- Fast loading with minimal dependencies
-- No JavaScript frameworks - pure HTML/CSS/JS
+Everything lives in two data files; pages and PDFs are generated from them.
 
-## Project Structure
+| What | Where |
+| --- | --- |
+| CV (summary, skills, jobs, education, certs…) | `src/data/resume.ts` |
+| Portfolio cards, stats, filters | `src/data/projects.ts` |
+| Blog posts (Markdown) | `src/content/blog/*.md` |
+| Images, static files | `public/` |
 
-```
-.
-├── index.html          # Home page
-├── resume.html         # CV and experience
-├── portfolio.html      # Projects showcase
-├── styles/
-│   └── simple.css      # Main stylesheet
-├── assets/
-│   └── images/         # Images and PDFs
-└── _data/              # YAML data files (for Jekyll)
-```
+Bullet text supports `**bold lead-in:**` and `` `code` ``.
 
-## Local Development
-
-### Option 1: Simple HTTP Server (No Jekyll needed)
+## Commands
 
 ```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx http-server
-
-# Using PHP
-php -S localhost:8000
+npm install          # once
+npm run dev          # local dev server at http://localhost:4321
+npm run build        # build to dist/
+npm run pdf          # print resume & portfolio PDFs into dist/ (needs Chrome)
+npm run pdf -- public  # …and refresh the committed fallback copies in public/
 ```
 
-Then visit `http://localhost:8000`
+Pushing to `main` builds the site, regenerates both PDFs and deploys (`.github/workflows/deploy.yml`).
 
-### Option 2: With Jekyll
+## Structure
 
-1. Install Ruby and Jekyll:
-```bash
-sudo apt-get install ruby-full build-essential
-gem install jekyll bundler
 ```
-
-2. Clone and run:
-```bash
-git clone https://github.com/jona42-ui/jona42-ui.github.io.git
-cd jona42-ui.github.io
-bundle install
-bundle exec jekyll serve
+src/
+  data/        resume.ts, projects.ts   ← edit content here
+  content/     blog posts
+  components/  Nav, Footer, ProjectCard, SocialIcon
+  layouts/     Base.astro (head/SEO, nav, footer)
+  pages/       index, resume, portfolio, blog, 404
+  styles/      global.css (screen + print/PDF styles)
+public/        images, PDFs, manifest, robots.txt
+_archive/      unused source files kept out of the deployed site
 ```
-
-3. Visit `http://localhost:4000`
-
-## Customization
-
-- Edit HTML files directly for content changes
-- Modify `styles/simple.css` for styling
-- Update `_data/*.yml` files for structured data
-- Replace images in `assets/images/`
-
-## Pages
-
-- **Home** - Introduction with links to resume and portfolio
-- **Resume** - Education, experience, skills, and certifications
-- **Portfolio** - Featured projects and work
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-Thembo Jonathan
-- Email: jonathanthembo123@gmail.com
-- LinkedIn: [thembo-jonathan](https://www.linkedin.com/in/thembo-jonathan/)
-- GitHub: [jona42-ui](https://github.com/jona42-ui)

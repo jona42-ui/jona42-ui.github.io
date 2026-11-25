@@ -1,0 +1,115 @@
+---
+import Base from '../layouts/Base.astro';
+import SocialIcon from '../components/SocialIcon.astro';
+import { inline } from '../lib/inline';
+import {
+  profile, summary, skills, experience, education,
+  talks, certifications, extracurricular, openSource,
+} from '../data/resume';
+
+const icon = {
+  summary: 'M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z',
+  skills: 'M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z',
+  work: 'M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z',
+  education: 'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z',
+  talks: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z',
+  certs: 'M20 12c0-1.1.9-2 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-1.99.9-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2zm-4.42 4.8L12 14.5l-3.58 2.3 1.08-4.12-3.29-2.69 4.24-.25L12 5.8l1.54 3.95 4.24.25-3.29 2.69 1.09 4.11z',
+  extra: 'M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z',
+  building: 'M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z',
+  phone: 'M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z',
+  pin: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z',
+  mail: 'M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z',
+};
+const strip = (u: string) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+
+const lists = [
+  { title: 'Professional Talks and Presentations', icon: icon.talks, items: talks },
+  { title: 'Licenses & Certifications', icon: icon.certs, items: certifications },
+  { title: 'Extracurricular Activities', icon: icon.extra, items: extracurricular },
+];
+---
+<Base title="Resume" description={summary}>
+  <main class="resume-main">
+    <div class="resume-container">
+      <header class="cv-header">
+        <div class="profile-section">
+          <img src={profile.photo} alt={profile.name} class="profile-img" width="90" height="90" />
+        </div>
+        <div class="info-section">
+          <h1>{profile.name}</h1>
+          <div class="header-details">
+            <p class="detail-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d={icon.phone} /></svg>{profile.phone}</p>
+            <p class="detail-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d={icon.pin} /></svg>{profile.location}</p>
+            <p class="detail-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d={icon.mail} /></svg>{profile.email}</p>
+            <p class="print-links">{[profile.website, profile.github, profile.linkedin].map(strip).join(' · ')}</p>
+            <div class="social-links-header">
+              <a href={profile.website} target="_blank" rel="noopener" title="Website"><SocialIcon name="web" size={18} /></a>
+              <a href={profile.github} target="_blank" rel="noopener" title="GitHub"><SocialIcon name="github" size={18} /></a>
+              <a href={profile.linkedin} target="_blank" rel="noopener" title="LinkedIn"><SocialIcon name="linkedin" size={18} /></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="cv-section">
+        <h2 class="section-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d={icon.summary} /></svg>Summary</h2>
+        <p class="section-content">{summary}</p>
+      </section>
+
+      <section class="cv-section">
+        <h2 class="section-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d={icon.skills} /></svg>Skills</h2>
+        <div class="skills-content">
+          {skills.map((s) => <div class="skill-row"><strong>{s.label}</strong> {s.items}</div>)}
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h2 class="section-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d={icon.work} /></svg>Work Experience</h2>
+        {experience.map((job) => (
+          <div class="experience-entry">
+            <h3 class="job-title">{job.title}</h3>
+            <p class="company-name">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 4px;"><path d={icon.building} /></svg>
+              {job.company}
+            </p>
+            <p class="job-location">{job.location}</p>
+            <p class="job-period">{job.period}</p>
+            <ul class="job-duties">
+              {job.bullets.map((b) => <li set:html={inline(b)} />)}
+            </ul>
+          </div>
+        ))}
+      </section>
+
+      <section class="cv-section">
+        <h2 class="section-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d={icon.education} /></svg>Education</h2>
+        {education.map((e) => (
+          <div class="education-entry">
+            <h3 class="degree-title">{e.degree}</h3>
+            <p class="institution-name">{e.institution}</p>
+            <p class="edu-location">{e.location}</p>
+            <p class="edu-period">{e.period}</p>
+          </div>
+        ))}
+      </section>
+
+      {lists.map((l) => (
+        <section class="cv-section">
+          <h2 class="section-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d={l.icon} /></svg>{l.title}</h2>
+          <ul class="cert-list">{l.items.map((i) => <li>{i}</li>)}</ul>
+        </section>
+      ))}
+
+      <section class="cv-section">
+        <h2 class="section-title"><SocialIcon name="github" size={20} />Open Source Contributions</h2>
+        <ul class="cert-list">{openSource.map((i) => <li>{i}</li>)}</ul>
+      </section>
+
+      <div class="download-btn-container">
+        <a href="/Thembo_Jonathan_Resume.pdf" download class="pdf-download-btn" title="Download PDF" aria-label="Download resume as PDF">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" /></svg>
+        </a>
+      </div>
+    </div>
+  </main>
+</Base>

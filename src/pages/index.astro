@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { profile } from '../data/resume';
+---
+<Base>
+  <main>
+    <section class="hero">
+      <h1>Software<br />Engineer</h1>
+      <p>{profile.tagline}</p>
+    </section>
+
+    <section class="content">
+      <h2>Familiarize yourself with my experience</h2>
+      <p>Carefully crafted resume that represents my experiences in a user-friendly fashion.<br />Check 'em out!</p>
+
+      <div class="cards">
+        <div class="card">
+          <a href="/resume.html" class="card-preview-link" aria-label="Open resume">
+            <div class="card-preview">
+              <iframe src="/resume.html" class="preview-iframe" tabindex="-1" loading="lazy" title="Resume preview"></iframe>
+            </div>
+          </a>
+          <p><a href="/resume.html">Click</a> to view my CV online or<br /><a href="/Thembo_Jonathan_Resume.pdf" download>download</a> the pdf directly</p>
+        </div>
+
+        <div class="card">
+          <a href="/portfolio.html" class="card-preview-link" aria-label="Open portfolio">
+            <div class="card-preview">
+              <iframe src="/portfolio.html" class="preview-iframe" tabindex="-1" loading="lazy" title="Portfolio preview"></iframe>
+            </div>
+          </a>
+          <p><a href="/portfolio.html">Click</a> to view my Portfolio<br />online or <a href="/Thembo_Jonathan_Portfolio.pdf" download>download</a> the pdf directly</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

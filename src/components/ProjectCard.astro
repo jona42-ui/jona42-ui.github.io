@@ -1,0 +1,41 @@
+---
+import type { Project } from '../data/projects';
+import { icons } from '../data/projects';
+import { inline } from '../lib/inline';
+
+interface Props { project: Project }
+const { project: p } = Astro.props;
+---
+<article
+  class:list={['pf-card', { 'pf-featured': p.featured }]}
+  data-cat={p.categories.join(' ')}
+  style={`--accent:${p.accent}; --accent-soft:${p.accentSoft};`}
+>
+  <div class:list={['pf-cover', { 'pf-cover-art': !p.image }]}>
+    {p.image ? (
+      <img src={p.image} alt={p.title} loading={p.featured ? 'eager' : 'lazy'} decoding="async" />
+    ) : (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={icons[p.icon ?? 'iot']} />
+    )}
+    <span class="pf-badge">{p.badge}</span>
+    <span class="pf-metric">{p.metric}</span>
+  </div>
+  <div class="pf-body">
+    <span class="pf-role">{p.role}</span>
+    <h2>{p.title}</h2>
+    <p>{p.description}</p>
+    {p.highlights && (
+      <ul class="pf-highlights">
+        {p.highlights.map((h) => <li set:html={inline(h)} />)}
+      </ul>
+    )}
+    <div class="tech-tags">{p.tags.map((t) => <span>{t}</span>)}</div>
+    <div class="pf-footer">
+      {p.link ? (
+        <a href={p.link.href} target="_blank" rel="noopener" class="pf-link">{p.link.label} <span aria-hidden="true">→</span></a>
+      ) : (
+        <span class="pf-private">{p.note}</span>
+      )}
+    </div>
+  </div>
+</article>

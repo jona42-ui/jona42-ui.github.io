@@ -1,27 +1,17 @@
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-.jekyll-now
+# Astro
+dist/
+.astro/
+node_modules/
 
 # Environment
 .env
 .env.*
 
-# Editor files
+# Editor / OS
 *.swp
 .DS_Store
 .idea/
 .vscode/
 
-# Node
-node_modules/
-
 # Logs
 *.log
-
-# Build artifacts
-dist/
-build/
-_build/

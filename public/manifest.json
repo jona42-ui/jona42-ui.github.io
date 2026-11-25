@@ -1,0 +1,33 @@
+{
+  "name": "Thembo Jonathan - Software Engineer",
+  "short_name": "Thembo Jonathan",
+  "description": "Software engineer building production integrations, data platforms and AI systems",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/assets/images/dna_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Resume",
+      "url": "/resume.html",
+      "description": "View my professional experience and qualifications"
+    },
+    {
+      "name": "Portfolio",
+      "url": "/portfolio.html",
+      "description": "Explore my portfolio of projects"
+    }
+  ],
+  "categories": ["portfolio", "professional", "technology"],
+  "prefer_related_applications": false,
+  "scope": "/"
+}
