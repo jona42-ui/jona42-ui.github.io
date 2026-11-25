@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import SocialIcon from '../components/SocialIcon.astro';
 import { inline } from '../lib/inline';
@@ -33,7 +34,7 @@ const lists = [
     <div class="resume-container">
       <header class="cv-header">
         <div class="profile-section">
-          <img src={profile.photo} alt={profile.name} class="profile-img" width="90" height="90" />
+          <Image src={profile.photo} alt={profile.name} class="profile-img" width={180} height={180} loading="eager" />
         </div>
         <div class="info-section">
           <h1>{profile.name}</h1>

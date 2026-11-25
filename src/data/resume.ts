@@ -1,4 +1,6 @@
 // Single source of truth for the CV. Edit here; resume.html and the PDF are generated from it.
+import photo from '../assets/profile/jonaprof-sm.jpg';
+
 // Bullet text supports a bold lead-in written as "**Lead:** rest of the sentence".
 
 export const profile = {
@@ -7,7 +9,7 @@ export const profile = {
   phone: '(256) 770688802',
   location: 'Kampala, Uganda',
   email: 'jonathanthembo123@gmail.com',
-  photo: '/assets/images/profile/jonaprof-sm.jpg',
+  photo,
   website: 'https://jona42-ui.github.io',
   github: 'https://github.com/jona42-ui',
   linkedin: 'https://www.linkedin.com/in/thembo-jonathan/',

@@ -1,4 +1,10 @@
 // Single source of truth for the portfolio. Add a project by adding an object here.
+// Images live in src/assets/ and are imported so Astro can compress and resize them at build time.
+import type { ImageMetadata } from 'astro';
+import googleReserve from '../assets/projects/google_reserve.webp';
+import sapMiddleware from '../assets/projects/sap_middleware.webp';
+import geospatial from '../assets/projects/geospatial.webp';
+import nlpNetwork from '../assets/projects/nlp_network.webp';
 
 export type Category = 'enterprise' | 'ai' | 'oss' | 'iot';
 
@@ -38,7 +44,7 @@ export interface Project {
   metric: string;
   accent: string;
   accentSoft: string;
-  image?: string;
+  image?: ImageMetadata;
   icon?: keyof typeof icons;
   link?: { href: string; label: string };
   /** Shown in the footer when there is no public link. */
@@ -64,7 +70,7 @@ export const projects: Project[] = [
     metric: 'Live on Search · Maps · Assistant',
     accent: '#2563eb',
     accentSoft: '#dbeafe',
-    image: '/assets/images/projects/google_reserve.webp',
+    image: googleReserve,
     note: 'Enterprise · private codebase',
   },
   {
@@ -79,7 +85,7 @@ export const projects: Project[] = [
     metric: 'Large-dataset sync',
     accent: '#7c3aed',
     accentSoft: '#ede9fe',
-    image: '/assets/images/projects/sap_middleware.webp',
+    image: sapMiddleware,
     note: 'Enterprise · private codebase',
   },
   {
@@ -108,7 +114,7 @@ export const projects: Project[] = [
     metric: '−60% query time · 99.9% uptime',
     accent: '#059669',
     accentSoft: '#d1fae5',
-    image: '/assets/images/projects/geospatial.webp',
+    image: geospatial,
     note: 'Enterprise · private codebase',
   },
   {
@@ -150,7 +156,7 @@ export const projects: Project[] = [
     metric: 'Red Hat · nmstate',
     accent: '#dc2626',
     accentSoft: '#fee2e2',
-    image: '/assets/images/projects/nlp_network.webp',
+    image: nlpNetwork,
     link: { href: 'https://github.com/nmstate/nmstate', label: 'View upstream' },
   },
   {
